@@ -3,3 +3,13 @@
     <title>赤乌堂｜留言板</title>
 </head>
 <p>bbs works!</p>
+
+<ul class="messages">
+  <li *ngFor="let message of messages">
+
+<div><span>id: </span>{{message.id}}</div>
+<div><span>name: </span>{{message.username}}</div>
+<div><span>name: </span>{{message.text}}</div>
+
+  </li>
+</ul>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -24,6 +25,7 @@ import {RouterModule} from "@angular/router";
   imports: [
     BrowserModule,
        ReactiveFormsModule,
+      HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: IndexComponent },
       { path: 'news', component: NewsComponent },
