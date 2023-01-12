@@ -13,21 +13,7 @@ export class BbsService {
 
   constructor( private http: HttpClient,) { }
 
-    message:Message ={
-      id: 1,
-  userId: 1,
-  text: 'string',
-  time: 'string',
-  username: 'string'
-  }
 
-    message2:Message ={
-      id: 2,
-  userId: 2,
-  text: 'stri2ng',
-  time: 'strin2g',
-  username: 'str2ing'
-  }
 
 
   getMessages():Observable<Message[]>{

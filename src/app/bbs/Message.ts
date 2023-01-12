@@ -3,5 +3,6 @@ export interface Message {
   userId: number,
   text: string,
   time: string,
-  username: string;
+  username: string,
+  ip: string;
 }
