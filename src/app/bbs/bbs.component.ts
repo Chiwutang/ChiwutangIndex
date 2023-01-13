@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 
@@ -22,15 +22,17 @@ export class BbsComponent implements OnInit {
   });
 
       onSubmit(): void {
-    console.log(this.messageForm.value)
-        this.bbsService.addMessage(this.messageForm.value['username'],this.messageForm.value['text']) .subscribe();
-    this.messageForm.reset()
-        this.getMessages()
-        location.reload();
+        this.bbsService.addMessage(this.messageForm.value['username'],this.messageForm.value['text']) .subscribe(messages=>
+        {
+          this.getMessages();
+          this.changeDetectorRef.detectChanges()
+        });
+        this.messageForm.reset()
+
   }
 
 
-  constructor(private http: HttpClient,private bbsService:BbsService,private formBuilder: FormBuilder) { }
+  constructor(private http: HttpClient,private bbsService:BbsService,private formBuilder: FormBuilder,private changeDetectorRef: ChangeDetectorRef,) { }
 
 getMessages(): void {
   this.bbsService.getMessages().subscribe(messages=> this.messages = messages);
