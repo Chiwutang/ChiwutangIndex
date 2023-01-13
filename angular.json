@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "untitled2"
+  "cli": {
+    "analytics": "1f3fc653-b826-44af-bf3a-a27e604f9aa4"
+  }
 }
