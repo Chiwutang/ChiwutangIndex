@@ -11,6 +11,8 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import { NgxTurnstileModule,NgxTurnstileFormsModule } from "ngx-turnstile";
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {RouterModule} from "@angular/router";
   ],
   imports: [
     BrowserModule,
+    NgxTurnstileModule,
+    NgxTurnstileFormsModule,
        ReactiveFormsModule,
       HttpClientModule,
     RouterModule.forRoot([

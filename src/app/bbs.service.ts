@@ -14,10 +14,6 @@ export class BbsService {
 
   constructor( private http: HttpClient,) { }
 
-  m:SendMessage = {
-    username : '',
-   text : ''
- };
 
 
   getMessages():Observable<Message[]>{
@@ -26,12 +22,9 @@ export class BbsService {
 
 
 
-  addMessage(username:string,text:string): Observable<SendMessage>{
-     console.log(username,text)
-    this.m.text = text;
-    this.m.username = username;
-    console.log(this.m)
-    return this.http.post<SendMessage>(this.url,this.m);
+  addMessage(sendMessage:SendMessage): Observable<SendMessage>{
+     console.log(sendMessage)
+    return this.http.post<SendMessage>(this.url,sendMessage);
   }
 
 }

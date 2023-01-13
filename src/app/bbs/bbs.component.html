@@ -42,11 +42,20 @@
 </div>
 <div class="form-group">
     <textarea formControlName="text" class="form-control" id="text" rows="6"></textarea>
+
+
+  <ngx-turnstile
+    [siteKey]="siteKey"
+    (resolved)="sendCaptchaResponse($event)"
+    theme="auto"
+    [tabIndex]="0"
+  ></ngx-turnstile>
+
 </div>
 
 
 
-<div class="cf-turnstile" data-sitekey="0x4AAAAAAAB8CJnEhWfuYgjH" data-callback="javascriptCallback"></div>
+
 
 
 

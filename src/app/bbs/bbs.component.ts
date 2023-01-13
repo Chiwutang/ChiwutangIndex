@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 
 import {Message} from "./Message";
 import {BbsService} from "../bbs.service";
+import {SendMessage} from "./SendMessage";
 
 
 @Component({
@@ -14,15 +15,30 @@ import {BbsService} from "../bbs.service";
 })
 export class BbsComponent implements OnInit {
 
+  siteKey = '0x4AAAAAAAB8CJnEhWfuYgjH';
+
   messages:Message[] =[];
 
     messageForm = this.formBuilder.group({
     username: '',
-    text: ''
+    text: '',
   });
 
+
+    cfTurnstileResponse:string = '';
+
+    s:SendMessage={
+      username:'',
+      text:'',
+    cfTurnstileResponse:''
+    }
+
       onSubmit(): void {
-        this.bbsService.addMessage(this.messageForm.value['username'],this.messageForm.value['text']) .subscribe(messages=>
+        console.log(this.messageForm.value)
+        this.s.cfTurnstileResponse =  this.cfTurnstileResponse;
+        this.s.username = this.messageForm.value['username'];
+        this.s.text = this.messageForm.value['text'];
+        this.bbsService.addMessage(this.s) .subscribe(messages=>
         {
           this.getMessages();
           this.changeDetectorRef.detectChanges()
@@ -40,6 +56,11 @@ getMessages(): void {
 
   ngOnInit(): void {
     this.getMessages();
+  }
+
+   sendCaptchaResponse(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+    this.cfTurnstileResponse = captchaResponse;
   }
 
 }
