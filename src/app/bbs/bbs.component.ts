@@ -17,14 +17,16 @@ export class BbsComponent implements OnInit {
   messages:Message[] =[];
 
     messageForm = this.formBuilder.group({
-    username: '1',
-    text: '1'
+    username: '',
+    text: ''
   });
 
       onSubmit(): void {
     console.log(this.messageForm.value)
         this.bbsService.addMessage(this.messageForm.value['username'],this.messageForm.value['text']) .subscribe();
-    this.messageForm.reset();
+    this.messageForm.reset()
+        this.getMessages()
+        location.reload();
   }
 
 
