@@ -1,6 +1,6 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 
 
 import {Message} from "./Message";
@@ -48,7 +48,7 @@ export class BbsComponent implements OnInit {
   }
 
 
-  constructor(private http: HttpClient,private bbsService:BbsService,private formBuilder: FormBuilder,private changeDetectorRef: ChangeDetectorRef,) { }
+  constructor(private http: HttpClient,private bbsService:BbsService,private formBuilder: UntypedFormBuilder,private changeDetectorRef: ChangeDetectorRef,) { }
 
 getMessages(): void {
   this.bbsService.getMessages().subscribe(messages=> this.messages = messages);
@@ -58,9 +58,13 @@ getMessages(): void {
     this.getMessages();
   }
 
-   sendCaptchaResponse(captchaResponse: string) {
+   sendCaptchaResponse(captchaResponse: string|null) {
     console.log(`Resolved captcha with response: ${captchaResponse}`);
-    this.cfTurnstileResponse = captchaResponse;
+    if (captchaResponse==null){
+
+    }else {
+      this.cfTurnstileResponse = captchaResponse;
+    }
   }
 
 }

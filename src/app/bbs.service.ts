@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Message} from "./bbs/Message";
-import {newArray} from "@angular/compiler/src/util";
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from "rxjs";
 import {SendMessage} from "./bbs/SendMessage";
