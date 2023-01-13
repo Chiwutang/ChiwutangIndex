@@ -43,6 +43,8 @@
 <div class="form-group">
     <textarea formControlName="text" class="form-control" id="text" rows="6"></textarea>
 
+</div>
+
 
   <ngx-turnstile
     [siteKey]="siteKey"
@@ -51,12 +53,11 @@
     [tabIndex]="0"
   ></ngx-turnstile>
 
+
+  <div [hidden]="errorMessage ==''"
+     class="alert alert-danger">
+ {{errorMessage}}
 </div>
-
-
-
-
-
 
 
 <button type="submit" class="btn btn-primary btn-round">提交</button>

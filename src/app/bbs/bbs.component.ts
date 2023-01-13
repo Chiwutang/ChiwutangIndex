@@ -19,6 +19,8 @@ export class BbsComponent implements OnInit {
 
   messages:Message[] =[];
 
+  errorMessage:string = '';
+
     messageForm = this.formBuilder.group({
     username: '',
     text: '',
@@ -35,9 +37,20 @@ export class BbsComponent implements OnInit {
 
       onSubmit(): void {
         console.log(this.messageForm.value)
+
+        if (this.messageForm.value['username']==''){
+          this.errorMessage = '用户名不可为空'
+          return
+        }
+        if (this.messageForm.value['text']==''){
+          this.errorMessage = '留言内容不可为空'
+          return
+        }
+
         this.s.cfTurnstileResponse =  this.cfTurnstileResponse;
         this.s.username = this.messageForm.value['username'];
         this.s.text = this.messageForm.value['text'];
+        this.errorMessage = ''
         this.bbsService.addMessage(this.s) .subscribe(messages=>
         {
           this.getMessages();
