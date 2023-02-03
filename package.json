@@ -23,7 +23,6 @@
     "dotenv": "^16.0.3",
     "marked": "^4.2.12",
     "ngx-markdown": "^15.1.0",
-    "ngx-turnstile": "^0.0.6",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -46,13 +46,6 @@
 </div>
 
 
-  <ngx-turnstile
-    [siteKey]="siteKey"
-    (resolved)="sendCaptchaResponse($event)"
-    theme="auto"
-    [tabIndex]="0"
-  ></ngx-turnstile>
-
 
   <div [hidden]="errorMessage ==''"
      class="alert alert-danger">
