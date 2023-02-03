@@ -3,52 +3,29 @@
 	<div class="row justify-content-between">
 		<div class="col-md-12">
 			<h5 class="font-weight-bold spanborder"><span>文章列表</span></h5>
-			<div class="mb-3 d-flex justify-content-between">
-				<div class="pr-3">
-					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="https://www.douban.com/note/840011847">推理评论研究类刊物 《磷》 第二卷征稿通知</a>
-					</h2>
-					<p>
-						相较第一卷征稿通知，有所变动之处做高亮处理（投稿邮箱有变！），请有意投稿者注意。
-					</p>
-					<div class="card-text text-muted small">
-						 伍碑梓
-					</div>
-					<small class="text-muted">2022-10-27 12:31:05</small>
-				</div>
-				<img height="120" src="./assets/img/demo/blog8.jpg">
-			</div>
-			<div class="mb-3 d-flex justify-content-between">
-				<div class="pr-3">
-					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="https://www.douban.com/note/833330383">推理评论研究类刊物《磷》第一卷电子版已公开</a>
-					</h2>
-					<p>
-						现已公开
-					</p>
-					<div class="card-text text-muted small">
-						 伍碑梓
-					</div>
-					<small class="text-muted">2022-06-20 11:03:31</small>
-				</div>
-				<img height="120" src="./assets/img/demo/1.jpg">
-			</div>
-			<div class="mb-3 d-flex justify-content-between">
-				<div class="pr-3">
-					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="https://www.douban.com/note/818364654">推理评论研究类刊物 《磷》 第一卷征稿通知</a>
-					</h2>
-					<p>
-						磷磷萤火，愿逐月华
-					</p>
-					<div class="card-text text-muted small">
-						 伍碑梓
-					</div>
-					<small class="text-muted">2021-10-28 23:30:36</small>
-				</div>
-				<img height="120" src="./assets/img/demo/5.jpg">
-			</div>
-		</div>
+
+
+      <div *ngFor="let issue of issues">
+
+        <ul class="list-unstyled">
+        <li class="media">
+          <img height="64" src="{{ issue.avatar_url }}" class="mr-3" alt="...">
+          <div class="media-body">
+            <a [routerLink]="['/news', issue.id]"><h5 class="mt-0" >{{ issue.title }}</h5></a>
+           {{issue.text}}
+            <div class="card-text text-muted small">
+              {{ issue.login }}
+            </div>
+            <small class="text-muted">{{ issue.created_at }}</small>
+          </div>
+        </li>
+        </ul>
+
+        </div>
+
+
+
+
 
 	</div>
 </div>

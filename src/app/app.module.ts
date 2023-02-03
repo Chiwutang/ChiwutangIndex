@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import {NgModule, SecurityContext} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { NgxTurnstileModule,NgxTurnstileFormsModule } from "ngx-turnstile";
+import { ArticleComponent } from './article/article.component';
+import {MarkdownModule} from "ngx-markdown";
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { NgxTurnstileModule,NgxTurnstileFormsModule } from "ngx-turnstile";
     NewsComponent,
     BbsComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -30,11 +33,13 @@ import { NgxTurnstileModule,NgxTurnstileFormsModule } from "ngx-turnstile";
     NgxTurnstileFormsModule,
        ReactiveFormsModule,
       HttpClientModule,
+    MarkdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: IndexComponent },
       { path: 'news', component: NewsComponent },
       { path: 'book', component: BookComponent },
       { path: 'bbs', component: BbsComponent },
+      { path: 'news/:id', component: ArticleComponent },
     ])
   ],
   providers: [],
