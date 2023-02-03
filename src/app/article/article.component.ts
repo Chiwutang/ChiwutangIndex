@@ -22,7 +22,7 @@ export class ArticleComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     const id = this.route.snapshot.paramMap.get('id')!;
-    this.issue = await this.issuesService.getArticle(id)
+    this.issuesService.getArticle(id).subscribe(issue=> this.issue = issue);
 
   }
 
