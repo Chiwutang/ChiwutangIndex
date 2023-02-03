@@ -20,14 +20,12 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.issues=[]
-    this.issuesService.getArticles().then(l=> l.forEach(i=>this.issues.push(i)))
+    this.issuesService.getArticles().subscribe(issues=> this.issues = issues);
   }
 
 
   gotoArticle(issue:any):void{
     this.router.navigate(['article'] , {relativeTo: this.activeRoute}).then(r => console.log(r))
   }
-
-
 
 }
