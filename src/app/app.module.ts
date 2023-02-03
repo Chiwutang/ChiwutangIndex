@@ -11,7 +11,6 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
-import { NgxTurnstileModule,NgxTurnstileFormsModule } from "ngx-turnstile";
 import { ArticleComponent } from './article/article.component';
 import {MarkdownModule} from "ngx-markdown";
 
@@ -29,8 +28,6 @@ import {MarkdownModule} from "ngx-markdown";
   ],
   imports: [
     BrowserModule,
-    NgxTurnstileModule,
-    NgxTurnstileFormsModule,
        ReactiveFormsModule,
       HttpClientModule,
     MarkdownModule.forRoot(),

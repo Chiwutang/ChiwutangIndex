@@ -15,7 +15,7 @@ import {SendMessage} from "./SendMessage";
 })
 export class BbsComponent implements OnInit {
 
-  siteKey = '0x4AAAAAAAB8CJnEhWfuYgjH';
+
 
   messages:Message[] =[];
 
@@ -27,7 +27,7 @@ export class BbsComponent implements OnInit {
   });
 
 
-    cfTurnstileResponse:string = '';
+
 
     s:SendMessage={
       username:'',
@@ -47,7 +47,7 @@ export class BbsComponent implements OnInit {
           return
         }
 
-        this.s.cfTurnstileResponse =  this.cfTurnstileResponse;
+
         this.s.username = this.messageForm.value['username'];
         this.s.text = this.messageForm.value['text'];
         this.errorMessage = ''
@@ -71,13 +71,6 @@ getMessages(): void {
     this.getMessages();
   }
 
-   sendCaptchaResponse(captchaResponse: string|null) {
-    console.log(`Resolved captcha with response: ${captchaResponse}`);
-    if (captchaResponse==null){
 
-    }else {
-      this.cfTurnstileResponse = captchaResponse;
-    }
-  }
 
 }
