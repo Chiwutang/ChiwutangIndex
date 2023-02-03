@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Octokit} from "@octokit/core";
 import {Issue} from "./news/Issue";
+import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class IssuesService {
 
   async getArticles(): Promise<Issue[]> {
     this.issues=[]
-    const octokit = new Octokit({auth: `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`});
+    const octokit = new Octokit({auth: environment.GITHUB_TOKEN});
 
     const response = await octokit.request('GET /repos/{owner}/{repo}/issues', {
       owner: 'Chiwutang',
@@ -44,7 +45,7 @@ export class IssuesService {
 
   async getArticle(id: string) {
 
-    const octokit = new Octokit({auth: `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`});
+    const octokit = new Octokit({auth: environment.GITHUB_TOKEN});
 
     const response =  await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
       owner: 'Chiwutang',

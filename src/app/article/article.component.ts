@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Issue} from "../news/Issue";
 import {ActivatedRoute, Router} from "@angular/router";
 import {IssuesService} from "../issues.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-article',
