@@ -11,7 +11,7 @@
         <li class="media">
           <img height="64" src="{{ issue.user.avatar_url }}" class="mr-3" alt="...">
           <div class="media-body">
-            <a [routerLink]="['/news', issue.number]"><h5 class="mt-0" >{{ issue.title }}</h5></a>
+            <a class="text-dark" [routerLink]="['/news', issue.number]"><h5 class="mt-0" >{{ issue.title }}</h5></a>
            {{issue.text}}
             <div class="card-text text-muted small">
               {{ issue.user.login }}
