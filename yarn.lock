@@ -1829,6 +1829,11 @@
     "require-from-string" "^2.0.2"
     "uri-js" "^4.2.2"
 
+"angularjs-google-recaptcha-v3@^1.0.2":
+  "integrity" "sha512-Ot/QCUzNBMw8DJN4pzxg6bkHNepA0k6eV1LOY6cfkVzSECNrsMfv1QWWlVVWHP0efCQkqjxse7koBgWlrFdMiw=="
+  "resolved" "https://registry.npmjs.org/angularjs-google-recaptcha-v3/-/angularjs-google-recaptcha-v3-1.0.2.tgz"
+  "version" "1.0.2"
+
 "ansi-colors@4.1.3":
   "integrity" "sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw=="
   "resolved" "https://registry.npmjs.org/ansi-colors/-/ansi-colors-4.1.3.tgz"

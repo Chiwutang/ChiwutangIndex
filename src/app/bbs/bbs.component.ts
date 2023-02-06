@@ -24,18 +24,20 @@ export class BbsComponent implements OnInit {
     messageForm = this.formBuilder.group({
     username: '',
     text: '',
+      token: ''
   });
 
 
-
+    token:string = '666';
 
     s:SendMessage={
       username:'',
       text:'',
-    cfTurnstileResponse:''
+    token:''
     }
 
-      onSubmit(): void {
+  onSubmit(token: string): void {
+      console.log(token)
         console.log(this.messageForm.value)
 
         if (this.messageForm.value['username']==''){
@@ -50,6 +52,7 @@ export class BbsComponent implements OnInit {
 
         this.s.username = this.messageForm.value['username'];
         this.s.text = this.messageForm.value['text'];
+        this.s.token= token
         this.errorMessage = ''
         this.bbsService.addMessage(this.s) .subscribe(messages=>
         {
@@ -71,6 +74,9 @@ getMessages(): void {
     this.getMessages();
   }
 
-
+  getToken(token: HTMLInputElement):void{
+      console.log("hahaha")
+      console.log(token.placeholder)
+  }
 
 }
