@@ -33,42 +33,38 @@
 		<div class="col-lg-4">
 			<div class="flex-md-row mb-4 box-shadow h-xl-300">
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit(tokenNew.placeholder)" >
 <div class="row form-group">
     <div class="col">
-        <input formControlName="username" type="text" id="username" class="form-control" maxlength="10"  placeholder="你的名字">
-    </div>
+        <input formControlName="username" type="text" id="username" class="form-control" maxlength="10"  placeholder="你的名字" onchange="function clickInput()  {
+           grecaptcha.enterprise.ready(async () => {
+              const token = await grecaptcha.enterprise.execute('6LdxNFckAAAAAOEFOSOn6p1LEmXREwaSgzA5smUP', {action: 'LOGIN'});
+           document.getElementById('token').setAttribute('placeholder',token);
 
+        document.getElementById('button');
+      })
+        }
+        clickInput()">
+    </div>
 </div>
+
 <div class="form-group">
     <textarea formControlName="text" class="form-control" id="text" rows="6" maxlength="150"></textarea>
-
 </div>
 
-
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdSHVckAAAAANGIqzMC999dx8YqDOBvif7Fl9QD"></script>
-  <script>
-    grecaptcha.enterprise.ready(function() {
-      grecaptcha.enterprise.execute('6LdSHVckAAAAANGIqzMC999dx8YqDOBvif7Fl9QD', {action: 'login'}).then(function(token) {
-
-      });
-    });
-  </script>
-
-
-
-
+  <div class="form-group">
+  <input #tokenNew formControlName="token" type="text" id="token" class="form-control" hidden [value]="tokenNew"  [placeholder]="tokenNew">
+  </div>
 
   <div [hidden]="errorMessage ==''"
      class="alert alert-danger">
  {{errorMessage}}
 </div>
 
-
-
-
-
-<button type="submit" class="btn btn-primary btn-round">提交</button>
+<button type="submit" id="button"  class="btn btn-primary btn-round" >提交</button>
 </form>
 
 			</div>
