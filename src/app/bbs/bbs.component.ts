@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UntypedFormBuilder } from '@angular/forms';
-
+import { Title } from '@angular/platform-browser';
 
 import {Message} from "./Message";
 import {BbsService} from "../bbs.service";
@@ -64,7 +64,15 @@ export class BbsComponent implements OnInit {
   }
 
 
-  constructor(private http: HttpClient,private bbsService:BbsService,private formBuilder: UntypedFormBuilder,private changeDetectorRef: ChangeDetectorRef,) { }
+  constructor(private http: HttpClient,
+              private bbsService:BbsService,
+              private formBuilder: UntypedFormBuilder,
+              private changeDetectorRef: ChangeDetectorRef,
+              private titleService: Title,
+              ) {
+
+    this.titleService.setTitle("留言板 - 赤乌堂");
+  }
 
 getMessages(): void {
   this.bbsService.getMessages().subscribe(messages=> this.messages = messages);

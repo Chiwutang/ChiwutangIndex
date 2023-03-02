@@ -5,7 +5,7 @@ import {Issue} from "./Issue";
 import {ActivatedRoute, Router} from "@angular/router";
 import {BbsService} from "../bbs.service";
 import {IssuesService} from "../issues.service";
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -13,7 +13,14 @@ import {IssuesService} from "../issues.service";
 })
 export class NewsComponent implements OnInit {
 
-  constructor(public router:Router,public activeRoute:ActivatedRoute,public issuesService:IssuesService) { }
+  constructor(public router:Router,
+              public activeRoute:ActivatedRoute,
+              public issuesService:IssuesService,
+              private titleService: Title
+              ) {
+
+    this.titleService.setTitle("最新消息 - 赤乌堂");
+  }
 
   issues:Issue[] =[];
 
