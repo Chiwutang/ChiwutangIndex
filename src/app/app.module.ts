@@ -13,6 +13,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { ArticleComponent } from './article/article.component';
 import {MarkdownModule} from "ngx-markdown";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import {MarkdownModule} from "ngx-markdown";
       { path: 'book', component: BookComponent },
       { path: 'bbs', component: BbsComponent },
       { path: 'news/:id', component: ArticleComponent },
-    ])
+    ]),
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
