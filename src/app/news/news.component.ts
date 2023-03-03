@@ -24,10 +24,14 @@ export class NewsComponent implements OnInit {
 
   issues:Issue[] =[];
 
+  showSpinner: boolean= true;
 
   ngOnInit(): void {
     this.issues=[]
-    this.issuesService.getArticles().subscribe(issues=> this.issues = issues);
+    this.issuesService.getArticles().subscribe(issues=> {
+      this.issues = issues;
+      this.showSpinner = false;
+    });
   }
 
 

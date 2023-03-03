@@ -4,6 +4,9 @@
 		<div class="col-md-12">
 			<h5 class="font-weight-bold spanborder"><span>文章列表</span></h5>
 
+      <div class="center" [hidden]="!showSpinner" >
+        <mat-spinner color="accent"></mat-spinner>
+      </div>
 
       <div *ngFor="let issue of issues">
 
