@@ -15,6 +15,7 @@ import { ArticleComponent } from './article/article.component';
 import {MarkdownModule} from "ngx-markdown";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatCard, MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
       { path: 'news/:id', component: ArticleComponent },
     ]),
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
