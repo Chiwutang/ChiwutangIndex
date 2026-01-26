@@ -71,7 +71,7 @@ export class BbsComponent implements OnInit {
               private titleService: Title,
               ) {
 
-    this.titleService.setTitle("留言板 - 赤乌堂");
+    this.titleService.setTitle("投稿中心 - 赤乌堂");
   }
 
 getMessages(): void {
