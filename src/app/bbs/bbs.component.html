@@ -1,73 +1,76 @@
-<head>
-
-    <title>赤乌堂｜留言板</title>
-</head>
-
-
-<div class="container pt-4 pb-4">
-	<div class="row">
-		<div class="col-lg-8">
-      <div *ngFor="let message of messages">
-
-
-        		<div class="card border-0 mb-4 box-shadow">
-				<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-					<p class="card-text">
-						{{message.text}}
-					</p>
-					<div>
-						<small class="d-block"><a class="text-muted" >by {{message.username}}  - {{ message.ip }}</a></small>
-						<small class="text-muted"> {{message.time}}</small>
-					</div>
-				</div>
-			</div>
-
-
-
-      </div>
-
-
-
-
-		</div>
-		<div class="col-lg-4">
-			<div class="flex-md-row mb-4 box-shadow h-xl-300">
-
-
-
-
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit(tokenNew.placeholder)" >
-<div class="row form-group">
-    <div class="col">
-        <input formControlName="username" type="text" id="username" class="form-control" maxlength="10"  placeholder="你的名字" onchange="function clickInput()  {
-           grecaptcha.enterprise.ready(async () => {
-              const token = await grecaptcha.enterprise.execute('6LfFWlgkAAAAALkUq-MOTeTZ-LJPtzYXNNouNGPq', {action: 'LOGIN'});
-           document.getElementById('token').setAttribute('placeholder',token);
-
-        document.getElementById('button');
-      })
-        }
-        clickInput()">
-    </div>
-</div>
-
-<div class="form-group">
-    <textarea formControlName="text" class="form-control" id="text" rows="6" maxlength="150"></textarea>
-</div>
-
-  <div class="form-group">
-  <input #tokenNew formControlName="token" type="text" id="token" class="form-control" hidden [value]="tokenNew"  [placeholder]="tokenNew">
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">赤乌堂 · 投稿</span>
+    <h1>投稿</h1>
+    <p>欢迎推理爱好者投稿，与读书会一起记录讨论与创作成果。</p>
   </div>
+</section>
 
-  <div [hidden]="errorMessage ==''"
-     class="alert alert-danger">
- {{errorMessage}}
-</div>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>栏目设置</h2>
+      <p>长期征稿栏目如下：</p>
+    </div>
+    <div class="info-list">
+      <div class="info-item">
+        <h3>卷首语｜主创者序言</h3>
+        <p>由主创者负责，介绍本卷主题或收录的特色文章。</p>
+      </div>
+      <div class="info-item">
+        <h3>冷火篇｜推理作品评论</h3>
+        <p>1500-10000字，聚焦某一作品的评论或研讨记录，观点需具体。</p>
+      </div>
+      <div class="info-item">
+        <h3>琢磨篇｜推理相关杂谈</h3>
+        <p>5000-30000字，涵盖创作讨论、作者后记、自述、资料整理等内容。</p>
+      </div>
+      <div class="info-item">
+        <h3>风骨篇｜推理相关杂谈</h3>
+        <p>推理作家访谈、讲座记录、活动总结，字数不限。</p>
+      </div>
+      <div class="info-item">
+        <h3>特别征稿｜《青之毒》长评磷选奖</h3>
+        <p>3000-10000字，须先发布于《青之毒》豆瓣长评区。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<button type="submit" id="button"  class="btn btn-primary btn-round" >提交</button>
-</form>
+<section class="section muted">
+  <div class="container">
+    <div class="section-header">
+      <h2>投递方式</h2>
+      <p>长期征稿，欢迎随时投稿。</p>
+    </div>
+    <div class="submission-grid">
+      <div class="submission-card">
+        <h3>邮箱投递</h3>
+        <p>请发送附件至 <strong>qingwatang2022@qq.com</strong>，三周内将发送回执。</p>
+        <a class="btn primary" href="mailto:qingwatang2022@qq.com?subject=%E6%8A%95%E7%A8%BF&body=%E7%AC%94%E5%90%8D%EF%BC%9A%0AQQ%EF%BC%9A%0A%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%EF%BC%9A">一键发送邮件</a>
+      </div>
+      <div class="submission-card">
+        <h3>QQ 传送（备选）</h3>
+        <p>联系 QQ：<strong>2066214072</strong> 传送文件（约 4-5 天游复）。</p>
+        <span class="tag">备用方式</span>
+      </div>
+      <div class="submission-card">
+        <h3>投稿须知</h3>
+        <p>请注明笔名与联系方式（QQ 为主），所有稿件将在截止日后三周内统一回复。</p>
+        <p>《磷》将于截止后三个月内在官方网站公开，并提供 PDF 下载。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-			</div>
-		</div>
-	</div>
-</div>
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>赤乌堂《磷》制作组</h2>
+        <p>感谢所有投稿与支持。</p>
+      </div>
+      <a class="btn ghost" href="https://www.douban.com/note/875872978" target="_blank" rel="noreferrer">参考豆瓣日记</a>
+    </div>
+  </div>
+</section>

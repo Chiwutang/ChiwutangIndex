@@ -1,34 +1,34 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">赤乌堂 · 最新消息</span>
+    <h1>最新消息</h1>
+    <p>记录读书会的最新文章、讨论与更新，方便快速追踪与回顾。</p>
+  </div>
+</section>
 
-<div class="container">
-	<div class="row justify-content-between">
-		<div class="col-md-12">
-			<h5 class="font-weight-bold spanborder"><span>文章列表</span></h5>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>文章列表</h2>
+      <p>以时间顺序呈现最新发布内容，欢迎随时交流想法。</p>
+    </div>
 
-      <div class="center" [hidden]="!showSpinner" >
-        <mat-spinner color="accent"></mat-spinner>
-      </div>
+    <div class="center" [hidden]="!showSpinner">
+      <mat-spinner color="accent"></mat-spinner>
+    </div>
 
-      <div *ngFor="let issue of issues">
-
-        <ul class="list-unstyled">
-        <li class="media">
-          <img height="64" src="{{ issue.user.avatar_url }}" class="mr-3" alt="...">
-          <div class="media-body">
-            <a class="text-dark" [routerLink]="['/news', issue.number]"><h5 class="mt-0" >{{ issue.title }}</h5></a>
-           {{issue.text}}
-            <div class="card-text text-muted small">
-              {{ issue.user.login }}
-            </div>
-            <small class="text-muted">{{ issue.created_at }}</small>
+    <div class="news-list">
+      <article class="news-card" *ngFor="let issue of issues">
+        <img class="news-avatar" height="64" src="{{ issue.user.avatar_url }}" alt="{{ issue.user.login }}">
+        <div class="news-content">
+          <a class="news-title" [routerLink]="['/news', issue.number]">{{ issue.title }}</a>
+          <p class="news-excerpt">{{ issue.text }}</p>
+          <div class="news-meta">
+            <span>{{ issue.user.login }}</span>
+            <span>{{ issue.created_at }}</span>
           </div>
-        </li>
-        </ul>
-
         </div>
-
-
-
-
-
-	</div>
-</div>
+      </article>
+    </div>
+  </div>
+</section>
