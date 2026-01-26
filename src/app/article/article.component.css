@@ -1,0 +1,71 @@
+:host {
+  display: block;
+  color: #3b2f23;
+  background: #f8f4ef;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+.container {
+  width: min(900px, 92vw);
+  margin: 0 auto;
+}
+
+.page-hero {
+  padding: 3rem 0 2rem;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  margin: 0.6rem 0 1.2rem;
+  line-height: 1.4;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: #7a6551;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #6b5847;
+}
+
+.meta strong {
+  display: block;
+  color: #3b2f23;
+}
+
+.meta span {
+  font-size: 0.9rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.section {
+  padding: 2.5rem 0 4rem;
+}
+
+.article-body {
+  background: #fffaf3;
+  border: 1px solid #e8d8c5;
+  border-radius: 18px;
+  padding: 2rem;
+  line-height: 1.9;
+  color: #4a3a2e;
+  box-shadow: 0 12px 24px rgba(82, 64, 47, 0.06);
+}
+
+@media (max-width: 600px) {
+  .article-body {
+    padding: 1.4rem;
+  }
+}
