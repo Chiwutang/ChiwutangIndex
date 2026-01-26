@@ -1,0 +1,26 @@
+.topnav {
+  background: #f8f4ef;
+  border-bottom: 1px solid #e6d8c9;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #3b2f23;
+}
+
+.navbar-brand:hover {
+  color: #3b2f23;
+}
+
+.nav-link {
+  color: #5c4a3b;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
+}
+
+.nav-link:hover {
+  color: #3b2f23;
+}

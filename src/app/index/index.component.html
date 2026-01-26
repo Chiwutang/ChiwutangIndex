@@ -1,94 +1,121 @@
-<div class="container">
-	<div class="jumbotron jumbotron-fluid mb-3 pt-0 pb-0 bg-lightblue position-relative">
-		<div class="pl-4 pr-0 h-100 tofront">
-			<div class="row justify-content-between">
-				<div class="col-md-6 pt-6 pb-6 align-self-center">
-
-
-          <article class="article-post">
-            <p>
-              赤乌堂成立于2021年，名不见经传的推理爱好者小团体。
-              大家因共同话题而走到一起，决定短暂地，一起做一件小事。
-              不论赤乌，抑或磷火，都包含了同一种属性的意向：
-              光芒。
-              因此，即使是小事，我们也正在努力地将自己的成果向更远方发散出去。
-              只因为我们也想要去做那一点微芒——
-              磷磷萤火，愿逐月华。
-            </p>
-
-          </article>
-
-
-
-<!--					<a href="./article.html" class="btn btn-dark">Read More</a>-->
-				</div>
-				<div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url(./assets/icon.jpg);">	</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Header -->
-
-
-
-<div class="container pt-4 pb-4">
-	<div class="row justify-content-center">
-
-		<div class="col-md-12 col-lg-10">
-      <h1 class="secondfont mb-3 font-weight-bold" style="text-align: center">成员</h1>
-
-
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4 col-lg-2 mb-4 d-flex">
-          <div class="card flex-fill">
-            <img src="./assets/img/avatar/alien.png" class="card-img-top" alt="阿唯">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">阿唯👽</h5>
-              <p class="card-text flex-grow-1">策划、美工、🛸</p>
-            </div>
-          </div>
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="eyebrow">赤乌堂 · 推理读书会</span>
+      <h1>在阅读与推敲之间，让故事更耐人寻味。</h1>
+      <p>
+        我们是一群热爱推理的读书人，沿着书页与讨论，寻找灵光与共鸣。
+        每一次分享与整理，都是把微光传得更远的方式。
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" routerLink="/news">阅读最新文章</a>
+        <a class="btn ghost" routerLink="/bbs">参与读书讨论</a>
+      </div>
+      <div class="hero-meta">
+        <div>
+          <strong>读书笔记</strong>
+          <span>精选主题</span>
         </div>
-        <div class="col-6 col-md-4 col-lg-2 mb-4 d-flex">
-          <div class="card flex-fill">
-            <img src="./assets/img/avatar/muhai.jpg" class="card-img-top" alt="木海">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">木海</h5>
-              <p class="card-text flex-grow-1">审稿、校对</p>
-            </div>
-          </div>
+        <div>
+          <strong>共读计划</strong>
+          <span>持续更新</span>
         </div>
-        <div class="col-6 col-md-4 col-lg-2 mb-4 d-flex">
-          <div class="card flex-fill">
-            <img src="./assets/img/avatar/wanger.jpg" class="card-img-top" alt="王二">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">王二</h5>
-              <p class="card-text flex-grow-1">审稿、校对</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 mb-4 d-flex">
-          <div class="card flex-fill">
-            <img src="./assets/img/avatar/uu.jpg" class="card-img-top" alt="U.U">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">U.U</h5>
-              <p class="card-text flex-grow-1">校对</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 mb-4 d-flex">
-          <div class="card flex-fill">
-            <img src="./assets/img/avatar/alien2.png" class="card-img-top" alt="...">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">韩雨洛👽</h5>
-              <p class="card-text flex-grow-1">发布推广📡</p>
-            </div>
-          </div>
+        <div>
+          <strong>2021</strong>
+          <span>成立</span>
         </div>
       </div>
-
-
-
-
     </div>
-	</div>
-</div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card">
+        <p>本月共读</p>
+        <h3>推理的秩序与迷雾</h3>
+        <span>每周三晚线上分享</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>读书会在做什么</h2>
+      <p>围绕阅读、写作与讨论，整理更实用的推理交流路径。</p>
+    </div>
+    <div class="card-grid">
+      <article class="info-card">
+        <h3>阅读札记</h3>
+        <p>从作品解读到摘录整理，沉淀可反复回看的推理索引。</p>
+        <a class="text-link" routerLink="/news">查看札记 →</a>
+      </article>
+      <article class="info-card">
+        <h3>共读清单</h3>
+        <p>持续维护书单与主题资料，帮助新成员快速进入状态。</p>
+        <a class="text-link" routerLink="/book">浏览书单 →</a>
+      </article>
+      <article class="info-card">
+        <h3>讨论茶话</h3>
+        <p>围绕谜题、设定与创作实践，分享不同视角与心得。</p>
+        <a class="text-link" routerLink="/bbs">进入讨论 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section muted">
+  <div class="container">
+    <div class="section-header center">
+      <h2>成员与分工</h2>
+      <p>让不同角色协作，把阅读的乐趣变成更具体的成果。</p>
+    </div>
+    <div class="member-grid">
+      <div class="member-card">
+        <img src="./assets/img/avatar/alien.png" alt="阿唯">
+        <div>
+          <h5>阿唯 👽</h5>
+          <span>策划 · 美工 · 🛸</span>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="./assets/img/avatar/muhai.jpg" alt="木海">
+        <div>
+          <h5>木海</h5>
+          <span>审稿 · 校对</span>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="./assets/img/avatar/wanger.jpg" alt="王二">
+        <div>
+          <h5>王二</h5>
+          <span>审稿 · 校对</span>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="./assets/img/avatar/uu.jpg" alt="U.U">
+        <div>
+          <h5>U.U</h5>
+          <span>校对</span>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="./assets/img/avatar/alien2.png" alt="韩雨洛">
+        <div>
+          <h5>韩雨洛 👽</h5>
+          <span>发布推广 · 📡</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>一起翻开下一页</h2>
+        <p>欢迎投稿、推荐书目或参与共读，让你的灵感被看见。</p>
+      </div>
+      <a class="btn primary" routerLink="/bbs">发起话题</a>
+    </div>
+  </div>
+</section>
