@@ -1,26 +1,27 @@
 .topnav {
-  background: #f8f4ef;
-  border-bottom: 1px solid #e6d8c9;
+  background: rgba(247, 242, 234, 0.96);
+  border-bottom: 1px solid var(--border);
   font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  backdrop-filter: blur(6px);
 }
 
 .navbar-brand {
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #3b2f23;
+  color: var(--text);
 }
 
 .navbar-brand:hover {
-  color: #3b2f23;
+  color: var(--text);
 }
 
 .nav-link {
-  color: #5c4a3b;
+  color: var(--text-muted);
   font-weight: 600;
   letter-spacing: 0.05em;
   margin-left: 0.5rem;
 }
 
 .nav-link:hover {
-  color: #3b2f23;
+  color: var(--text);
 }
