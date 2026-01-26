@@ -1,40 +1,40 @@
 .submission-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
 
 .submission-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 1.4rem;
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
   box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.8rem;
 }
 
 .submission-card h3 {
-  margin: 0 0 0.6rem;
-  font-size: 1.1rem;
+  margin: 0;
+  font-size: 1.15rem;
 }
 
 .submission-card p {
-  margin: 0 0 0.6rem;
+  margin: 0;
   color: var(--text-muted);
   line-height: 1.7;
 }
 
 .info-list {
   display: grid;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 .info-item {
-  padding-bottom: 1.2rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.info-item:last-child {
-  border-bottom: none;
+  padding: 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
 }
 
 .info-item h3 {
@@ -48,30 +48,8 @@
   line-height: 1.7;
 }
 
-.cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.8rem 2.2rem;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.cta h2 {
-  margin: 0;
-  font-size: 1.4rem;
-}
-
-.cta p {
-  margin: 0.4rem 0 0;
-  color: var(--text-muted);
-}
-
 @media (max-width: 600px) {
-  .cta {
-    flex-direction: column;
-    text-align: center;
+  .submission-card {
+    padding: 1.4rem;
   }
 }

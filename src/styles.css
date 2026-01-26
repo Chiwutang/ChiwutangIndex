@@ -1,16 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   color-scheme: light;
-  --bg: #f7f2ea;
-  --bg-muted: #f1e6d9;
-  --surface: #fffaf3;
-  --text: #3b2f23;
-  --text-muted: #6b5847;
-  --text-light: #7a6551;
-  --accent: #8c5a2b;
-  --accent-dark: #754820;
-  --border: #e6d8c9;
-  --shadow: 0 12px 24px rgba(82, 64, 47, 0.08);
+  --bg: #f3f5f9;
+  --bg-muted: #e9edf6;
+  --surface: #ffffff;
+  --surface-muted: #f7f8fc;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  --accent: #4f46e5;
+  --accent-strong: #3730a3;
+  --accent-soft: #e0e7ff;
+  --border: #d6dce8;
+  --shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
 }
 
 *,
@@ -21,10 +26,10 @@
 
 body {
   margin: 0;
-  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 45%, #eef1f7 100%);
+  line-height: 1.7;
 }
 
 img {
@@ -36,20 +41,49 @@ a {
   color: inherit;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
 .container {
-  width: min(1100px, 92vw);
+  width: min(1200px, 92vw);
   margin: 0 auto;
 }
 
+.display {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+}
+
+.caption {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
 .page-hero {
-  padding: 3.5rem 0 2.5rem;
-  background: linear-gradient(180deg, #f6efe6 0%, #efe3d6 100%);
+  padding: 4rem 0 3rem;
+  background: linear-gradient(120deg, rgba(79, 70, 229, 0.08) 0%, rgba(56, 189, 248, 0.08) 100%);
   border-bottom: 1px solid var(--border);
 }
 
 .page-hero h1 {
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  margin: 0.5rem 0 0.8rem;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  margin: 0.7rem 0 1rem;
   line-height: 1.3;
 }
 
@@ -60,15 +94,18 @@ a {
 }
 
 .eyebrow {
-  display: inline-block;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   color: var(--text-light);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
 }
 
 .section {
-  padding: 3.5rem 0;
+  padding: 4.5rem 0;
 }
 
 .section.muted {
@@ -87,7 +124,7 @@ a {
 }
 
 .section-header h2 {
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
   margin-bottom: 0.8rem;
 }
 
@@ -101,46 +138,61 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 1.6rem;
+  padding: 0.75rem 1.8rem;
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .btn.primary {
   background: var(--accent);
-  color: #fdf7f1;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.2);
 }
 
 .btn.primary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
+  background: var(--accent-strong);
+  transform: translateY(-2px);
 }
 
 .btn.ghost {
-  border-color: #a58b73;
-  color: var(--text-muted);
-  background: transparent;
+  border-color: var(--border);
+  background: #ffffff;
+  color: var(--text);
 }
 
 .btn.ghost:hover {
-  background: #eadfce;
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .tag {
   display: inline-flex;
-  padding: 0.3rem 0.8rem;
+  padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  background: #eadfce;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
-.card {
+.panel {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow);
+}
+
+.stack {
+  display: grid;
+  gap: 1.2rem;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 3.5rem 0;
+  }
 }

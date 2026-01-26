@@ -1,27 +1,53 @@
-.topnav {
-  background: rgba(247, 242, 234, 0.96);
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(243, 245, 249, 0.9);
   border-bottom: 1px solid var(--border);
-  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
 }
 
-.navbar-brand {
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  gap: 1.5rem;
+}
+
+.brand {
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
   color: var(--text);
 }
 
-.navbar-brand:hover {
-  color: var(--text);
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .nav-link {
-  color: var(--text-muted);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-left: 0.5rem;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
 }
 
 .nav-link:hover {
+  background: var(--surface);
+  border-color: var(--border);
   color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

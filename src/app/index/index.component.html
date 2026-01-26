@@ -1,9 +1,9 @@
 <section class="hero">
-  <div class="container hero-content">
-    <div class="hero-text">
+  <div class="container hero-grid">
+    <div class="hero-main">
       <span class="eyebrow">赤乌堂 · 推理评论研究会</span>
-      <h1>磷磷萤火，愿逐月华</h1>
-      <p>
+      <h1 class="display">磷磷萤火，愿逐月华</h1>
+      <p class="lead">
         赤乌堂成立于2021年，名不见经传的推理爱好者小团体。
         大家因共同话题而走到一起，决定短暂地，一起做一件小事。
         不论赤乌，抑或磷火，都包含了同一种属性的意向：光芒。
@@ -15,57 +15,67 @@
         <a class="btn ghost" routerLink="/books">刊物一览</a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-card">
-        <p>最新征稿</p>
-        <h3>《磷》第五卷</h3>
-        <span>截止至2026年2月1日</span>
+    <div class="hero-aside">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card panel">
+          <p>最新征稿</p>
+          <h3>《磷》第五卷</h3>
+          <span>截止至2026年2月1日</span>
+        </div>
+      </div>
+      <div class="hero-rules">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   </div>
 </section>
 
-
 <section class="section muted">
-  <div class="container">
-    <div class="section-header center">
-      <h2>成员与分工</h2>
-
+  <div class="container split-layout">
+    <div class="split-intro">
+      <div class="section-header">
+        <h2>成员与分工</h2>
+      </div>
+      <div class="intro-divider"></div>
     </div>
-    <div class="member-grid">
-      <div class="member-card">
-        <img src="./assets/img/avatar/alien.png" alt="阿唯">
-        <div>
-          <h5>阿唯 👽</h5>
-          <span>策划 · 美工 · 🛸</span>
+    <div class="split-content">
+      <div class="member-grid">
+        <div class="member-card panel">
+          <img src="./assets/img/avatar/alien.png" alt="阿唯">
+          <div>
+            <h5>阿唯 👽</h5>
+            <span>策划 · 美工 · 🛸</span>
+          </div>
         </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/muhai.jpg" alt="木海">
-        <div>
-          <h5>木海</h5>
-          <span>审稿 · 校对</span>
+        <div class="member-card panel">
+          <img src="./assets/img/avatar/muhai.jpg" alt="木海">
+          <div>
+            <h5>木海</h5>
+            <span>审稿 · 校对</span>
+          </div>
         </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/wanger.jpg" alt="王二">
-        <div>
-          <h5>王二</h5>
-          <span>审稿 · 校对</span>
+        <div class="member-card panel">
+          <img src="./assets/img/avatar/wanger.jpg" alt="王二">
+          <div>
+            <h5>王二</h5>
+            <span>审稿 · 校对</span>
+          </div>
         </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/uu.jpg" alt="U.U">
-        <div>
-          <h5>U.U</h5>
-          <span>校对</span>
+        <div class="member-card panel">
+          <img src="./assets/img/avatar/uu.jpg" alt="U.U">
+          <div>
+            <h5>U.U</h5>
+            <span>校对</span>
+          </div>
         </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/alien2.png" alt="韩雨洛">
-        <div>
-          <h5>韩雨洛 👽</h5>
-          <span>发布推广 · 📡</span>
+        <div class="member-card panel">
+          <img src="./assets/img/avatar/alien2.png" alt="韩雨洛">
+          <div>
+            <h5>韩雨洛 👽</h5>
+            <span>发布推广 · 📡</span>
+          </div>
         </div>
       </div>
     </div>
@@ -74,7 +84,7 @@
 
 <section class="section">
   <div class="container">
-    <div class="cta">
+    <div class="cta-panel">
       <div>
         <h2>一起翻开下一页</h2>
         <p>欢迎投稿，让你的灵感被看见。</p>

@@ -22,26 +22,26 @@
 .avatar {
   width: 56px;
   height: 56px;
-  border-radius: 14px;
+  border-radius: var(--radius-sm);
   object-fit: cover;
 }
 
 .section {
-  padding: 2.5rem 0 4rem;
+  padding: 3rem 0 4.5rem;
 }
 
 .article-body {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 2rem;
+  border-radius: var(--radius-md);
+  padding: 2.4rem;
   line-height: 1.9;
-  color: #4a3a2e;
+  color: var(--text);
   box-shadow: var(--shadow);
 }
 
 @media (max-width: 600px) {
   .article-body {
-    padding: 1.4rem;
+    padding: 1.6rem;
   }
 }
