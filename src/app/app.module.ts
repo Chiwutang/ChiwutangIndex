@@ -15,7 +15,7 @@ import { ArticleComponent } from './article/article.component';
 import {MarkdownModule} from "ngx-markdown";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {MatCard, MatCardModule} from "@angular/material/card";
+import { TranslatePipe } from './i18n/translate.pipe';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import {MatCard, MatCardModule} from "@angular/material/card";
     BbsComponent,
     NavComponent,
     FooterComponent,
-    ArticleComponent
+    ArticleComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,

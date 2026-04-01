@@ -1,25 +1,19 @@
 <section class="hero">
   <div class="container hero-content">
     <div class="hero-text">
-      <span class="eyebrow">赤乌堂 · 推理评论研究会</span>
-      <h1>磷磷萤火，愿逐月华</h1>
-      <p>
-        赤乌堂成立于2021年，名不见经传的推理爱好者小团体。
-        大家因共同话题而走到一起，决定短暂地，一起做一件小事。
-        不论赤乌，抑或磷火，都包含了同一种属性的意向：光芒。
-        因此，即使是小事，我们也正在努力地将自己的成果向更远方发散出去。
-        只因为我们也想要去做那一点微芒——磷磷萤火，愿逐月华。
-      </p>
+      <span class="eyebrow">{{ 'index.eyebrow' | t }}</span>
+      <h1>{{ 'index.title' | t }}</h1>
+      <p>{{ 'index.desc' | t }}</p>
       <div class="hero-actions">
-        <a class="btn primary" routerLink="/news">最新消息</a>
-        <a class="btn ghost" routerLink="/books">刊物一览</a>
+        <a class="btn primary" routerLink="/news">{{ 'index.cta.news' | t }}</a>
+        <a class="btn ghost" routerLink="/books">{{ 'index.cta.books' | t }}</a>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-card">
-        <p>最新征稿</p>
-        <h3>《磷》第五卷</h3>
-        <span>截止至2026年2月1日</span>
+        <p>{{ 'index.latest.call' | t }}</p>
+        <h3>{{ 'index.latest.volume' | t }}</h3>
+        <span>{{ 'index.latest.deadline' | t }}</span>
       </div>
     </div>
   </div>
@@ -29,7 +23,7 @@
 <section class="section muted">
   <div class="container">
     <div class="section-header center">
-      <h2>成员与分工</h2>
+      <h2>{{ 'index.member.title' | t }}</h2>
 
     </div>
     <div class="member-grid">
@@ -37,35 +31,35 @@
         <img src="./assets/img/avatar/alien.png" alt="阿唯">
         <div>
           <h5>阿唯 👽</h5>
-          <span>策划 · 美工 · 🛸</span>
+          <span>{{ 'index.member.alien' | t }}</span>
         </div>
       </div>
       <div class="member-card">
         <img src="./assets/img/avatar/muhai.jpg" alt="木海">
         <div>
           <h5>木海</h5>
-          <span>审稿 · 校对</span>
+          <span>{{ 'index.member.muhai' | t }}</span>
         </div>
       </div>
       <div class="member-card">
         <img src="./assets/img/avatar/wanger.jpg" alt="王二">
         <div>
           <h5>王二</h5>
-          <span>审稿 · 校对</span>
+          <span>{{ 'index.member.wanger' | t }}</span>
         </div>
       </div>
       <div class="member-card">
         <img src="./assets/img/avatar/uu.jpg" alt="U.U">
         <div>
           <h5>U.U</h5>
-          <span>校对</span>
+          <span>{{ 'index.member.uu' | t }}</span>
         </div>
       </div>
       <div class="member-card">
         <img src="./assets/img/avatar/alien2.png" alt="韩雨洛">
         <div>
           <h5>韩雨洛 👽</h5>
-          <span>发布推广 · 📡</span>
+          <span>{{ 'index.member.hyl' | t }}</span>
         </div>
       </div>
     </div>
@@ -76,10 +70,10 @@
   <div class="container">
     <div class="cta">
       <div>
-        <h2>一起翻开下一页</h2>
-        <p>欢迎投稿，让你的灵感被看见。</p>
+        <h2>{{ 'index.next.title' | t }}</h2>
+        <p>{{ 'index.next.desc' | t }}</p>
       </div>
-      <a class="btn primary" routerLink="/bbs">前往投稿</a>
+      <a class="btn primary" routerLink="/bbs">{{ 'index.next.button' | t }}</a>
     </div>
   </div>
 </section>

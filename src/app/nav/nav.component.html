@@ -1,6 +1,6 @@
 <nav class="topnav navbar navbar-expand-lg navbar-light fixed-top">
 <div class="container">
-	<a class="navbar-brand" routerLink="/"><strong>赤乌堂</strong></a>
+	<a class="navbar-brand" routerLink="/"><strong>{{ 'brand.name' | t }}</strong></a>
 	<button
 		class="navbar-toggler"
 		type="button"
@@ -14,19 +14,23 @@
 	<div class="navbar-collapse collapse" id="navbarColor02" [ngClass]="{ show: isMobileMenuOpen }">
 		<ul class="navbar-nav mr-auto d-flex align-items-center">
 			<li class="nav-item">
-			<a class="nav-link" routerLink="" (click)="closeMobileMenu()">关于我们</a>
+			<a class="nav-link" routerLink="" (click)="closeMobileMenu()">{{ 'nav.about' | t }}</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" routerLink="news" (click)="closeMobileMenu()">最新消息</a>
+			<a class="nav-link" routerLink="news" (click)="closeMobileMenu()">{{ 'nav.news' | t }}</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" routerLink="book" (click)="closeMobileMenu()">刊物一览</a>
+			<a class="nav-link" routerLink="book" (click)="closeMobileMenu()">{{ 'nav.books' | t }}</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" routerLink="bbs" (click)="closeMobileMenu()">投稿中心</a>
+			<a class="nav-link" routerLink="bbs" (click)="closeMobileMenu()">{{ 'nav.submit' | t }}</a>
 			</li>
 
 		</ul>
+    <div class="lang-switcher">
+      <button class="lang-btn" [class.active]="i18n.language === 'zh-CN'" (click)="switchLanguage('zh-CN')">{{ 'lang.zh' | t }}</button>
+      <button class="lang-btn" [class.active]="i18n.language === 'en-US'" (click)="switchLanguage('en-US')">{{ 'lang.en' | t }}</button>
+    </div>
 	</div>
 </div>
 </nav>

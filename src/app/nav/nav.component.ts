@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
+import { I18nService } from '../i18n/i18n.service';
+import { LanguageCode } from '../i18n/translations';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +14,7 @@ export class NavComponent implements OnInit, OnDestroy {
   isMobileMenuOpen = false;
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private readonly router: Router) { }
+  constructor(private readonly router: Router, public readonly i18n: I18nService) { }
 
   ngOnInit(): void {
     this.router.events
@@ -34,5 +36,9 @@ export class NavComponent implements OnInit, OnDestroy {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  switchLanguage(language: LanguageCode): void {
+    this.i18n.setLanguage(language);
   }
 }
