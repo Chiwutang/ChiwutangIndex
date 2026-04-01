@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
@@ -9,11 +9,10 @@ import { filter, takeUntil } from 'rxjs/operators';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit, OnDestroy {
-  @ViewChild('navbarCollapse') navbarCollapse?: ElementRef<HTMLDivElement>;
-  @ViewChild('navbarToggler') navbarToggler?: ElementRef<HTMLButtonElement>;
+  isMobileMenuOpen = false;
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private readonly router: Router, private readonly renderer: Renderer2) { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
     this.router.events
@@ -30,16 +29,10 @@ export class NavComponent implements OnInit, OnDestroy {
   }
 
   closeMobileMenu(): void {
-    if (!this.navbarCollapse || !this.navbarToggler) {
-      return;
-    }
-
-    const collapseEl = this.navbarCollapse.nativeElement;
-    const togglerEl = this.navbarToggler.nativeElement;
-
-    this.renderer.removeClass(collapseEl, 'show');
-    this.renderer.setAttribute(togglerEl, 'aria-expanded', 'false');
-    this.renderer.addClass(togglerEl, 'collapsed');
+    this.isMobileMenuOpen = false;
   }
 
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }

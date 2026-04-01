@@ -1,10 +1,17 @@
 <nav class="topnav navbar navbar-expand-lg navbar-light fixed-top">
 <div class="container">
 	<a class="navbar-brand" routerLink="/"><strong>赤乌堂</strong></a>
-	<button #navbarToggler class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+	<button
+		class="navbar-toggler"
+		type="button"
+		aria-controls="navbarColor02"
+		[attr.aria-expanded]="isMobileMenuOpen"
+		aria-label="Toggle navigation"
+		[ngClass]="{ collapsed: !isMobileMenuOpen }"
+		(click)="toggleMobileMenu()">
 	<span class="navbar-toggler-icon"></span>
 	</button>
-	<div #navbarCollapse class="navbar-collapse collapse " id="navbarColor02" style="">
+	<div class="navbar-collapse collapse" id="navbarColor02" [ngClass]="{ show: isMobileMenuOpen }">
 		<ul class="navbar-nav mr-auto d-flex align-items-center">
 			<li class="nav-item">
 			<a class="nav-link" routerLink="" (click)="closeMobileMenu()">关于我们</a>
