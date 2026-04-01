@@ -1,6 +1,6 @@
 <section class="page-hero" *ngIf="issue">
   <div class="container">
-    <span class="eyebrow">赤乌堂 · 最新消息</span>
+    <span class="eyebrow">{{ 'news.eyebrow' | t }}</span>
     <h1>{{ issue.title }}</h1>
     <div class="meta">
       <img class="avatar" src="{{ issue.user.avatar_url }}" alt="{{ issue.user.login }}">

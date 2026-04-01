@@ -1,0 +1,112 @@
+export type LanguageCode = 'zh-CN' | 'en-US';
+
+export const translations: Record<LanguageCode, Record<string, string>> = {
+  'zh-CN': {
+    'brand.name': '赤乌堂',
+    'nav.about': '关于我们',
+    'nav.news': '最新消息',
+    'nav.books': '刊物一览',
+    'nav.submit': '投稿中心',
+
+    'index.eyebrow': '赤乌堂 · 推理评论研究会',
+    'index.title': '磷磷萤火，愿逐月华',
+    'index.desc': '赤乌堂成立于2021年，名不见经传的推理爱好者小团体。大家因共同话题而走到一起，决定短暂地，一起做一件小事。不论赤乌，抑或磷火，都包含了同一种属性的意向：光芒。因此，即使是小事，我们也正在努力地将自己的成果向更远方发散出去。只因为我们也想要去做那一点微芒——磷磷萤火，愿逐月华。',
+    'index.cta.news': '最新消息',
+    'index.cta.books': '刊物一览',
+    'index.latest.call': '最新征稿',
+    'index.latest.volume': '《磷》第五卷',
+    'index.latest.deadline': '截止至2026年2月1日',
+    'index.member.title': '成员与分工',
+    'index.member.alien': '策划 · 美工 · 🛸',
+    'index.member.muhai': '审稿 · 校对',
+    'index.member.wanger': '审稿 · 校对',
+    'index.member.uu': '校对',
+    'index.member.hyl': '发布推广 · 📡',
+    'index.next.title': '一起翻开下一页',
+    'index.next.desc': '欢迎投稿，让你的灵感被看见。',
+    'index.next.button': '前往投稿',
+
+    'footer.copyright': '版权所有。',
+    'footer.slogan': '磷磷萤火，愿逐月华',
+
+    'book.eyebrow': '赤乌堂 · 刊物一览',
+    'book.title': '刊物一览',
+    'book.desc': '整理读书会刊物与专题资料，方便随时阅读与收藏。',
+    'book.series.title': '《磷》系列',
+    'book.series.desc': '聚焦推理主题的刊物合集，按卷持续更新。',
+    'book.read': '在线阅读',
+    'book.download': '下载',
+
+    'news.eyebrow': '赤乌堂 · 最新消息',
+    'news.title': '最新消息',
+    'news.desc': '记录读书会的最新文章、讨论与更新，方便快速追踪与回顾。',
+
+    'bbs.eyebrow': '赤乌堂 · 投稿',
+    'bbs.title': '投稿',
+    'bbs.desc': '欢迎推理爱好者投稿，与读书会一起记录讨论与创作成果。',
+    'bbs.section.columns': '栏目设置',
+    'bbs.section.columns.desc': '长期征稿栏目如下：',
+    'bbs.section.submit': '投递方式',
+    'bbs.section.submit.desc': '长期征稿，欢迎随时投稿。',
+    'bbs.mail.title': '邮箱投递',
+    'bbs.mail.desc': '请发送附件至 qingwatang2022@qq.com，三周内将发送回执。',
+    'bbs.mail.button': '一键发送邮件',
+
+    'lang.zh': '中',
+    'lang.en': 'EN'
+  },
+  'en-US': {
+    'brand.name': 'Chiwutang',
+    'nav.about': 'About',
+    'nav.news': 'News',
+    'nav.books': 'Books',
+    'nav.submit': 'Submit',
+
+    'index.eyebrow': 'Chiwutang · Detective Fiction Review Group',
+    'index.title': 'Like Fireflies, We Chase the Moonlight',
+    'index.desc': 'Founded in 2021, Chiwutang is a small but passionate circle of mystery readers. We came together around shared interests and chose to do something meaningful together, even if only in a modest way. Whether "Red Crow" or "Phosphorescence," both point to one thing: light. So even for small work, we keep trying to let it travel farther.',
+    'index.cta.news': 'Latest News',
+    'index.cta.books': 'Publications',
+    'index.latest.call': 'Open Call',
+    'index.latest.volume': 'Phospho Vol. 5',
+    'index.latest.deadline': 'Deadline: Feb 1, 2026',
+    'index.member.title': 'Team & Roles',
+    'index.member.alien': 'Planning · Design · 🛸',
+    'index.member.muhai': 'Review · Proofreading',
+    'index.member.wanger': 'Review · Proofreading',
+    'index.member.uu': 'Proofreading',
+    'index.member.hyl': 'Promotion · 📡',
+    'index.next.title': 'Turn to the Next Page Together',
+    'index.next.desc': 'Send us your work and let your ideas be seen.',
+    'index.next.button': 'Submit Now',
+
+    'footer.copyright': 'All rights reserved.',
+    'footer.slogan': 'Like Fireflies, We Chase the Moonlight',
+
+    'book.eyebrow': 'Chiwutang · Publications',
+    'book.title': 'Publications',
+    'book.desc': 'Collected journals and special issues for reading and archiving.',
+    'book.series.title': 'Phospho Series',
+    'book.series.desc': 'A growing collection focused on mystery criticism and reading notes.',
+    'book.read': 'Read Online',
+    'book.download': 'Download',
+
+    'news.eyebrow': 'Chiwutang · News',
+    'news.title': 'Latest News',
+    'news.desc': 'Updates, articles, and discussions from our reading group.',
+
+    'bbs.eyebrow': 'Chiwutang · Submission',
+    'bbs.title': 'Submission',
+    'bbs.desc': 'Mystery lovers are welcome to contribute and share their writing.',
+    'bbs.section.columns': 'Columns',
+    'bbs.section.columns.desc': 'We accept submissions in the following long-term columns:',
+    'bbs.section.submit': 'How to Submit',
+    'bbs.section.submit.desc': 'Open year-round. Send us your work anytime.',
+    'bbs.mail.title': 'Email',
+    'bbs.mail.desc': 'Send your attachment to qingwatang2022@qq.com. A receipt will be sent within 3 weeks.',
+    'bbs.mail.button': 'Send Email',
+
+    'lang.zh': '中文',
+    'lang.en': 'EN'
+  }
+};
