@@ -1,3 +1,5 @@
+import { AppModule } from '../app.module';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexComponent } from './index.component';
@@ -8,7 +10,7 @@ describe('IndexComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndexComponent ]
+      imports: [AppModule, RouterTestingModule]
     })
     .compileComponents();
   });

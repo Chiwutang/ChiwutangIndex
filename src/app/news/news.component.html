@@ -1,31 +1,19 @@
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">{{ 'news.eyebrow' | t }}</span>
-    <h1>{{ 'news.title' | t }}</h1>
-    <p>{{ 'news.desc' | t }}</p>
-  </div>
+<div class="interior-page paper-grain">
+<header class="page-intro frame">
+<p class="folio">{{ 'news.eyebrow' | t }}</p>
+<h1>{{ 'news.title' | t }}</h1>
+<p>{{ 'news.desc' | t }}</p>
+</header>
+<section class="journal frame" [attr.aria-label]="'nav.news' | t">
+<p *ngIf="!issues.length" class="page-state">{{ 'news.empty' | t }}</p>
+<article *ngFor="let issue of issues; let i = index" class="journal-entry"><span class="entry-number" aria-hidden="true">{{ (i + 1).toString().padStart(2, '0') }}</span>
+<div>
+<p class="folio"><time [attr.datetime]="issue.date">{{ issue.date | date:'yyyy.MM.dd' }}</time><span> / {{ issue.author }}</span>
+</p>
+<h2><a [routerLink]="['/news', issue.number]">{{ issue.title }}</a>
+</h2>
+<p *ngIf="issue.summary" class="entry-excerpt">{{ issue.summary.length > 180 ? issue.summary.slice(0, 180) + '…' : issue.summary }}</p><a class="entry-link" [routerLink]="['/news', issue.number]">{{ 'news.read' | t }} <span aria-hidden="true">↗</span></a>
+</div>
+</article>
 </section>
-
-<section class="section">
-  <div class="container">
-
-
-    <div class="center" [hidden]="!showSpinner">
-      <mat-spinner color="accent"></mat-spinner>
-    </div>
-
-    <div class="news-list">
-      <article class="news-card" *ngFor="let issue of issues">
-        <img class="news-avatar" height="64" src="{{ issue.user.avatar_url }}" alt="{{ issue.user.login }}">
-        <div class="news-content">
-          <a class="news-title" [routerLink]="['/news', issue.number]">{{ issue.title }}</a>
-          <p class="news-excerpt">{{ issue.text }}</p>
-          <div class="news-meta">
-            <span>{{ issue.user.login }}</span>
-            <span>{{ issue.created_at }}</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+</div>

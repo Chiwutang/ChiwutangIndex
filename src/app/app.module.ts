@@ -1,6 +1,9 @@
-import {NgModule, SecurityContext} from '@angular/core';
+import { NotFoundComponent } from './world/not-found.component';
+import { FirefliesComponent } from './world/fireflies.component';
+import { PreviewComponent } from './world/preview.component';
+import { LanguageSwitchComponent } from './world/language-switch.component';
+import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -9,12 +12,9 @@ import { NewsComponent } from './news/news.component';
 import { BbsComponent } from './bbs/bbs.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { ArticleComponent } from './article/article.component';
 import {MarkdownModule} from "ngx-markdown";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { TranslatePipe } from './i18n/translate.pipe';
 
 
@@ -28,12 +28,14 @@ import { TranslatePipe } from './i18n/translate.pipe';
     NavComponent,
     FooterComponent,
     ArticleComponent,
+    LanguageSwitchComponent,
+    PreviewComponent,
+    FirefliesComponent,
+    NotFoundComponent,
     TranslatePipe
   ],
   imports: [
     BrowserModule,
-       ReactiveFormsModule,
-      HttpClientModule,
     MarkdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: IndexComponent },
@@ -41,9 +43,9 @@ import { TranslatePipe } from './i18n/translate.pipe';
       { path: 'book', component: BookComponent },
       { path: 'bbs', component: BbsComponent },
       { path: 'news/:id', component: ArticleComponent },
-    ]),
-    BrowserAnimationsModule,
-    MatProgressSpinnerModule,
+      { path: 'books', redirectTo: 'book', pathMatch: 'full' },
+      { path: '**', component: NotFoundComponent },
+    ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),
   ],
   providers: [],
   bootstrap: [AppComponent]

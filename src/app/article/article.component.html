@@ -1,23 +1,14 @@
-<section class="page-hero" *ngIf="issue">
-  <div class="container">
-    <span class="eyebrow">{{ 'news.eyebrow' | t }}</span>
-    <h1>{{ issue.title }}</h1>
-    <div class="meta">
-      <img class="avatar" src="{{ issue.user.avatar_url }}" alt="{{ issue.user.login }}">
-      <div>
-        <strong>{{ issue.user.login }}</strong>
-        <span>{{ issue.created_at }}</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" *ngIf="issue">
-  <div class="container">
-    <div class="article-body">
-      <markdown>
-        {{ issue.body }}
-      </markdown>
-    </div>
-  </div>
-</section>
+<div class="interior-page paper-grain article-page">
+<div class="article-wrap frame"><a class="back-link" routerLink="/news">← {{ 'news.back' | t }}</a>
+<div class="page-state" *ngIf="!issue" role="status">
+<p>{{ 'article.error' | t }}</p>
+</div>
+<article *ngIf="issue">
+<header class="article-heading">
+<p class="folio"><time [attr.datetime]="issue.date">{{ issue.date | date:'yyyy.MM.dd' }}</time><span> / {{ issue.author }}</span>
+</p>
+<h1>{{ issue.title }}</h1>
+</header><markdown class="article-prose" [data]="issue.body"></markdown>
+</article>
+</div>
+</div>

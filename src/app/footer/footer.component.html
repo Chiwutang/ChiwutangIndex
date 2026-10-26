@@ -1,14 +1,6 @@
-<div class="container mt-5">
-	<footer class="bg-white border-top p-3 text-muted small">
-	<div class="row align-items-center justify-content-between">
-		<div>
-            <span class="navbar-brand mr-2"><strong>{{ 'brand.name' | t }}</strong></span> Copyright &copy; 2021-2026
-			<script>document.write(new Date().getFullYear())</script>
-			 . {{ 'footer.copyright' | t }}
-		</div>
-		<div>
-			{{ 'footer.slogan' | t }}
-		</div>
-	</div>
-	</footer>
-</div>
+<footer class="site-footer frame">
+<div>
+<p>{{ 'brand.name' | t }} © 2021–{{ year }}　{{ 'footer.slogan' | t }}</p>
+<p>{{ 'footer.copyright' | t }}</p>
+</div><a routerLink="/" fragment="opening">{{ 'footer.home' | t }}</a>
+</footer>

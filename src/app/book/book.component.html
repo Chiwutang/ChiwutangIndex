@@ -1,100 +1,34 @@
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">{{ 'book.eyebrow' | t }}</span>
-    <h1>{{ 'book.title' | t }}</h1>
-    <p>{{ 'book.desc' | t }}</p>
-  </div>
+<div class="interior-page paper-grain">
+<header class="page-intro frame">
+<p class="folio">{{ 'book.eyebrow' | t }}</p>
+<h1>{{ 'book.title' | t }}</h1>
+<p>{{ 'book.desc' | t }}</p>
+</header>
+<section class="library frame" [attr.aria-label]="'nav.books' | t">
+  <article *ngFor="let book of books; let first = first" class="library-volume" [class.latest-volume]="first">
+    <figure><span class="volume-number" aria-hidden="true">0{{ book.volume }}</span><a [href]="book.readUrl" target="_blank" rel="noopener noreferrer"><img [src]="book.cover" [alt]="book.titleKey | t" width="586" height="826" [loading]="first ? 'eager' : 'lazy'"></a>
+</figure>
+    <div class="volume-copy">
+<p class="folio">PHOSPHO / 0{{ book.volume }}</p>
+<h2>{{ book.titleKey | t }}</h2>
+<p>{{ book.descriptionKey | t }}</p>
+<div class="text-links"><a [href]="book.readUrl" target="_blank" rel="noopener noreferrer">{{ 'book.read' | t }} ↗</a><a [href]="book.pdfUrl" target="_blank" rel="noopener noreferrer">{{ 'book.download' | t }} ↓</a>
+</div>
+    <div *ngIf="first" class="volume-previews">
+<p class="folio">{{ 'book.preview' | t }}</p>
+<button type="button" *ngFor="let item of previews" (click)="preview.open(item)" aria-haspopup="dialog">{{ item.titleKey | t }} <span aria-hidden="true">↗</span>
+</button>
+</div>
+</div>
+  </article>
+  <article class="library-volume special-volume">
+<figure><img src="/assets/img/jie3.jpeg" [alt]="'book.special.title' | t" loading="lazy" width="600" height="850">
+</figure>
+<div class="volume-copy">
+<p class="folio">{{ 'book.special' | t }}</p>
+<h2>{{ 'book.special.title' | t }}</h2>
+<p>{{ 'book.paper' | t }}</p>
+</div>
+</article>
 </section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>{{ 'book.series.title' | t }}</h2>
-      <p>{{ 'book.series.desc' | t }}</p>
-    </div>
-
-    <div class="book-grid">
-      <article class="book-card">
-        <div class="book-cover" style="background-image: url(./assets/img/book5.webp);"></div>
-        <div class="book-body">
-          <h3>《磷》第五卷</h3>
-          <p>2025 年度推理观察、游戏研究与创作者访谈。</p>
-          <div class="book-actions">
-            <a class="btn primary" href="https://phospho5.chiwutang.uk/">{{ 'book.read' | t }}</a>
-            <a class="btn ghost" href="https://download.chiwutang.uk/Phospho5.pdf">{{ 'book.download' | t }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="book-card">
-        <div class="book-cover" style="background-image: url(./assets/img/book4.png);"></div>
-        <div class="book-body">
-          <h3>《磷》第四卷</h3>
-          <p>聚合推理阅读与创作心得。</p>
-          <div class="book-actions">
-            <a class="btn primary" href="https://phospho4.chiwutang.uk/">{{ 'book.read' | t }}</a>
-            <a class="btn ghost" href="https://download.chiwutang.uk/Phospho4.pdf">{{ 'book.download' | t }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="book-card">
-        <div class="book-cover" style="background-image: url(./assets/img/book3.jpg);"></div>
-        <div class="book-body">
-          <h3>《磷》第三卷</h3>
-          <p>收录讨论与读后记录，适合整体回顾。</p>
-          <div class="book-actions">
-            <a class="btn primary" href="https://phospho3.chiwutang.uk/">{{ 'book.read' | t }}</a>
-            <a class="btn ghost" href="https://download.chiwutang.uk/Phospho3.pdf">{{ 'book.download' | t }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="book-card">
-        <div class="book-cover" style="background-image: url(./assets/img/book2.png);"></div>
-        <div class="book-body">
-          <h3>《磷》第二卷</h3>
-          <p>整理早期共读主题与推荐书目。</p>
-          <div class="book-actions">
-            <a class="btn primary" href="https://phospho2.chiwutang.uk/">{{ 'book.read' | t }}</a>
-            <a class="btn ghost" href="https://download.chiwutang.uk/Phospho2.pdf">{{ 'book.download' | t }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="book-card">
-        <div class="book-cover" style="background-image: url(./assets/img/book11.png);"></div>
-        <div class="book-body">
-          <h3>《磷》第一卷</h3>
-          <p>读书会初刊，记录第一批共读成果。</p>
-          <div class="book-actions">
-            <a class="btn primary" href="https://phospho1.chiwutang.uk/">{{ 'book.read' | t }}</a>
-            <a class="btn ghost" href="https://phospho1.chiwutang.uk/Phospho1.pdf">{{ 'book.download' | t }}</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section muted">
-  <div class="container">
-    <div class="section-header">
-      <h2>《结》专题</h2>
-      <p>围绕单期主题整理的特刊内容。</p>
-    </div>
-
-    <div class="book-grid single">
-      <article class="book-card">
-        <div class="book-cover" style="background-image: url(./assets/img/jie3.jpeg);"></div>
-        <div class="book-body">
-          <h3>连续而不平稳的2008</h3>
-          <p>专题特刊，回顾一次重要的讨论与整理。</p>
-          <div class="book-actions">
-            <span class="tag">纸刊</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+</div><app-publication-preview #preview></app-publication-preview>

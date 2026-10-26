@@ -1,36 +1,19 @@
-<nav class="topnav navbar navbar-expand-lg navbar-light fixed-top">
-<div class="container">
-	<a class="navbar-brand" routerLink="/"><strong>{{ 'brand.name' | t }}</strong></a>
-	<button
-		class="navbar-toggler"
-		type="button"
-		aria-controls="navbarColor02"
-		[attr.aria-expanded]="isMobileMenuOpen"
-		aria-label="Toggle navigation"
-		[ngClass]="{ collapsed: !isMobileMenuOpen }"
-		(click)="toggleMobileMenu()">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="navbar-collapse collapse" id="navbarColor02" [ngClass]="{ show: isMobileMenuOpen }">
-		<ul class="navbar-nav mr-auto d-flex align-items-center">
-			<li class="nav-item">
-			<a class="nav-link" routerLink="" (click)="closeMobileMenu()">{{ 'nav.about' | t }}</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" routerLink="news" (click)="closeMobileMenu()">{{ 'nav.news' | t }}</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" routerLink="book" (click)="closeMobileMenu()">{{ 'nav.books' | t }}</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" routerLink="bbs" (click)="closeMobileMenu()">{{ 'nav.submit' | t }}</a>
-			</li>
-
-		</ul>
-    <div class="lang-switcher">
-      <button class="lang-btn" [class.active]="i18n.language === 'zh-CN'" (click)="switchLanguage('zh-CN')">{{ 'lang.zh' | t }}</button>
-      <button class="lang-btn" [class.active]="i18n.language === 'en-US'" (click)="switchLanguage('en-US')">{{ 'lang.en' | t }}</button>
-    </div>
-	</div>
+<header *ngIf="!isHome" class="interior-header frame">
+  <a routerLink="/" class="interior-brand"><img src="/assets/icon.jpg" alt="" width="40" height="40"><span>{{ 'brand.name' | t }}</span></a>
+  <app-language-switch></app-language-switch>
+</header>
+<div class="dock">
+  <a routerLink="/" class="dock-brand"><img src="/assets/icon.jpg" alt="" width="35" height="35"><span>{{ 'brand.name' | t }}</span></a>
+  <nav *ngIf="isHome; else routeNav" [attr.aria-label]="'nav.chapters' | t">
+    <a *ngFor="let section of sections" [href]="'#' + section.id" [class.active]="(ui.section$ | async) === section.id" [attr.aria-current]="(ui.section$ | async) === section.id ? 'location' : null" (click)="scrollTo($event, section.id)">{{ section.label | t }}</a>
+  </nav>
+  <ng-template #routeNav>
+<nav [attr.aria-label]="'nav.main' | t">
+    <a routerLink="/">{{ 'chapter.home' | t }}</a>
+    <a routerLink="/book" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'nav.books' | t }}</a>
+    <a routerLink="/news" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'nav.news' | t }}</a>
+    <a routerLink="/bbs" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'nav.submit' | t }}</a>
+  </nav>
+</ng-template>
+  <span class="dock-note">{{ 'footer.slogan' | t }}</span>
 </div>
-</nav>

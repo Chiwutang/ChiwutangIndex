@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'untitled2';
+  title = '赤乌堂';
+  skipToContent(event: MouseEvent): void {
+    event.preventDefault();
+    document.getElementById('main-content')?.focus();
+  }
 }

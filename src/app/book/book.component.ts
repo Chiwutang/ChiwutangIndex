@@ -1,18 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-@Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
-})
+import { PUBLICATIONS, PREVIEWS } from '../world/publications';
+import { PageTitleService } from '../world/page-title.service';
+@Component({ selector: 'app-book', templateUrl: './book.component.html', styleUrls: ['./book.component.css'] })
 export class BookComponent implements OnInit {
-
-  constructor(private titleService: Title) {
-    this.titleService.setTitle("刊物一览 - 赤乌堂");
-
-  }
-
-  ngOnInit(): void {
-  }
-
+  readonly books = PUBLICATIONS;
+  readonly previews = PREVIEWS;
+  constructor(private readonly title: PageTitleService) {}
+  ngOnInit(): void { this.title.setPage('nav.books'); }
 }

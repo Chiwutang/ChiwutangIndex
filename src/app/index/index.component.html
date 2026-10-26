@@ -1,79 +1,92 @@
-<section class="hero">
-  <div class="container hero-content">
-    <div class="hero-text">
-      <span class="eyebrow">{{ 'index.eyebrow' | t }}</span>
-      <h1>{{ 'index.title' | t }}</h1>
-      <p>{{ 'index.desc' | t }}</p>
-      <div class="hero-actions">
-        <a class="btn primary" routerLink="/news">{{ 'index.cta.news' | t }}</a>
-        <a class="btn ghost" routerLink="/books">{{ 'index.cta.books' | t }}</a>
-      </div>
+<app-fireflies [paused]="motionPaused || previewOpen"></app-fireflies>
+<section class="hero" id="opening" aria-labelledby="hero-title">
+  <div class="hero-art" aria-hidden="true">
+</div>
+<div class="hero-shade" aria-hidden="true">
+</div>
+  <header class="site-top">
+    <a routerLink="/" class="top-brand" lang="zh-CN">赤乌堂</a>
+    <div class="top-tools">
+      <a routerLink="/news">{{ 'nav.news' | t }}</a>
+      <app-language-switch></app-language-switch>
+      <button type="button" class="motion-toggle" [attr.aria-pressed]="motionPaused" (click)="motionPaused = !motionPaused">{{ (motionPaused ? 'motion.start' : 'motion.pause') | t }}</button>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-card">
-        <p>{{ 'index.latest.call' | t }}</p>
-        <h3>{{ 'index.latest.volume' | t }}</h3>
-        <span>{{ 'index.latest.deadline' | t }}</span>
-      </div>
+  </header>
+  <div class="hero-copy">
+    <h1 id="hero-title" class="hero-title" lang="zh-CN">赤乌堂</h1>
+    <p class="hero-identity">{{ 'home.identity' | t }}</p>
+    <p class="hero-description">{{ 'home.intro1' | t }}<br>{{ 'home.intro2' | t }}<br>{{ 'home.intro3' | t }}</p>
+    <a class="paper-button" [href]="latest.readUrl" target="_blank" rel="noopener noreferrer">{{ 'home.readLatest' | t }} <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="hero-verse" lang="zh-CN" aria-label="磷磷萤火，愿逐月华">
+<p>磷磷萤火</p>
+<p>愿逐月华</p>
+</div>
+  <div class="hero-caption"><a routerLink="/" fragment="origin">{{ 'home.enter' | t }}</a>
+</div>
+</section>
+<section class="origin frame paper-grain" id="origin" aria-labelledby="origin-title">
+  <div class="origin-inner">
+    <div class="origin-heading">
+<h2 id="origin-title">{{ 'home.origin.title' | t }}</h2>
+<p>{{ 'home.origin.description' | t }}</p>
+<div class="red-seal" aria-hidden="true">赤乌</div>
+</div>
+    <div class="origin-words">
+<p class="vertical-copy">{{ 'home.origin.verse' | t }}</p>
+<p class="vertical-copy">{{ 'home.origin.light' | t }}</p>
+<p class="vertical-copy">{{ 'home.origin.distance' | t }}</p>
+</div>
+  </div>
+</section>
+<section class="issue frame" id="current" aria-labelledby="issue-title">
+  <div class="issue-grid">
+    <figure class="cover-stage"><img class="issue-cover" [src]="latest.cover" [alt]="latest.titleKey | t" width="586" height="826" loading="lazy">
+</figure>
+    <div class="issue-text">
+<h2 id="issue-title">{{ latest.titleKey | t }}</h2>
+<p>{{ latest.descriptionKey | t }}</p>
+      <div class="article-index">
+<button type="button" *ngFor="let item of previews" (click)="preview.open(item)" [attr.aria-haspopup]="'dialog'"><span>{{ item.categoryKey | t }}</span><span>{{ item.titleKey | t }}</span>
+</button>
+</div>
+      <div class="issue-actions"><a class="paper-button" [href]="latest.readUrl" target="_blank" rel="noopener noreferrer">{{ 'book.read' | t }}</a><a [href]="latest.pdfUrl" target="_blank" rel="noopener noreferrer">{{ 'home.savePdf' | t }}</a>
+</div>
     </div>
   </div>
 </section>
-
-
-<section class="section muted">
-  <div class="container">
-    <div class="section-header center">
-      <h2>{{ 'index.member.title' | t }}</h2>
-
-    </div>
-    <div class="member-grid">
-      <div class="member-card">
-        <img src="./assets/img/avatar/alien.png" alt="阿唯">
-        <div>
-          <h5>阿唯 👽</h5>
-          <span>{{ 'index.member.alien' | t }}</span>
-        </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/muhai.jpg" alt="木海">
-        <div>
-          <h5>木海</h5>
-          <span>{{ 'index.member.muhai' | t }}</span>
-        </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/wanger.jpg" alt="王二">
-        <div>
-          <h5>王二</h5>
-          <span>{{ 'index.member.wanger' | t }}</span>
-        </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/uu.jpg" alt="U.U">
-        <div>
-          <h5>U.U</h5>
-          <span>{{ 'index.member.uu' | t }}</span>
-        </div>
-      </div>
-      <div class="member-card">
-        <img src="./assets/img/avatar/alien2.png" alt="韩雨洛">
-        <div>
-          <h5>韩雨洛 👽</h5>
-          <span>{{ 'index.member.hyl' | t }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="archive frame" id="archive" aria-labelledby="archive-title">
+  <div class="chapter-head">
+<h2 id="archive-title">{{ 'home.archive.title' | t }}</h2>
+<p>{{ 'home.archive.description' | t }}</p>
+</div>
+  <div class="book-fan">
+<figure *ngFor="let book of earlier"><a [href]="book.readUrl" target="_blank" rel="noopener noreferrer"><img [src]="book.cover" [alt]="book.titleKey | t" width="700" height="1000" loading="lazy"><figcaption>{{ book.titleKey | t }}<small>{{ 'book.read' | t }}</small></figcaption></a>
+</figure>
+</div>
+  <p class="archive-note">{{ 'home.archive.note' | t }}</p>
+  <a class="archive-all" routerLink="/book">{{ 'home.archive.all' | t }} ↗</a>
 </section>
-
-<section class="section">
-  <div class="container">
-    <div class="cta">
-      <div>
-        <h2>{{ 'index.next.title' | t }}</h2>
-        <p>{{ 'index.next.desc' | t }}</p>
-      </div>
-      <a class="btn primary" routerLink="/bbs">{{ 'index.next.button' | t }}</a>
-    </div>
-  </div>
+<section class="people frame paper-grain" id="people" aria-labelledby="people-title">
+  <div class="chapter-head">
+<h2 id="people-title">{{ 'home.people.title' | t }}</h2>
+<p>{{ 'home.people.description' | t }}</p>
+</div>
+  <div class="people-list">
+<div class="person" *ngFor="let member of members">
+<h3>{{ member.name }}</h3>
+<p>{{ member.roleKey | t }}</p>
+</div>
+</div>
 </section>
+<section class="invitation frame" id="submit" aria-labelledby="submit-title">
+  <div class="invitation-inner">
+<h2 id="submit-title">{{ 'home.submit.line1' | t }}<br>{{ 'home.submit.line2' | t }}</h2>
+<div>
+<p>{{ 'home.submit.description' | t }}</p>
+<div class="invitation-links"><a class="paper-button" routerLink="/bbs">{{ 'home.submit.guide' | t }}</a><a href="mailto:qingwatang2022@qq.com">{{ 'home.submit.contact' | t }}</a>
+</div>
+</div>
+</div>
+</section>
+<app-publication-preview #preview (openChange)="previewOpen = $event"></app-publication-preview>

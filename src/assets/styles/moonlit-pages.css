@@ -1,0 +1,105 @@
+/* Shared reading rooms. The homepage keeps the approved illustrated composition. */
+app-root, app-index, app-nav, app-footer, app-book, app-news, app-article, app-bbs { display:block; }
+.skip-link { position:fixed; left:20px; top:-100px; z-index:100; background:var(--paper); color:var(--ink); padding:12px 24px; }
+.skip-link:focus { top:12px; }
+.language-switch { display:inline-flex; align-items:center; gap:3px; font-family:"PingFang SC",sans-serif; font-size:11px; }
+.language-switch button { background:transparent; border:0; border-bottom:1px solid transparent; padding:3px 6px; opacity:.6; }
+.language-switch button[aria-pressed="true"] { opacity:1; border-color:currentColor; }
+.top-tools { align-items:center; }
+.origin-words p, .chapter-head p, .issue-text>p { white-space:pre-line; }
+.interior-header { display:flex; justify-content:space-between; align-items:center; padding-block:23px; background:var(--night); }
+.interior-brand { display:flex; align-items:center; gap:15px; font-family:var(--display); font-size:26px; letter-spacing:.12em; }
+.interior-brand img { border-radius:50%; }
+.interior-page { color:var(--ink); background:var(--paper); position:relative; min-height:65svh; padding-bottom:100px; }
+.page-intro { padding-top:90px; padding-bottom:72px; max-width:1100px; }
+.folio { font-family:"PingFang SC",sans-serif; font-size:11px; letter-spacing:.14em; line-height:1.7; color:#795e46; }
+.page-intro h1 { font-size:clamp(45px,6vw,84px); margin:25px 0 27px; line-height:1.3; white-space:pre-line; }
+.page-intro>p:last-child { font-size:18px; max-width:650px; line-height:2; }
+.library-volume { display:grid; grid-template-columns:minmax(0, .9fr) minmax(0,1.1fr); gap:clamp(45px,9vw,145px); align-items:center; padding:72px 0; border-top:1px solid #283b3930; }
+.library-volume figure { position:relative; padding:15px 30px 25px 20px; }
+.library-volume figure img { max-height:540px; width:auto; margin:auto; box-shadow:15px 20px 22px #10272d28; transform:rotate(-3deg); transition:transform .5s var(--ease); }
+.library-volume figure a:hover img { transform:rotate(0); }
+.volume-number { position:absolute; color:#283b3914; font:200px/1 Georgia,serif; top:-45px; right:0; }
+.volume-copy { position:relative; max-width:560px; }
+.volume-copy h2 { font-size:clamp(30px,3.5vw,48px); margin:18px 0 25px; line-height:1.5; }
+.volume-copy>p:not(.folio) { white-space:pre-line; font-size:17px; }
+.text-links { display:flex; flex-wrap:wrap; gap:30px; margin-top:30px; font-size:15px; }
+.text-links a, .back-link, .entry-link { border-bottom:1px solid #283b3960; padding-bottom:5px; }
+.text-links a:hover, .entry-link:hover, .column-list+a:hover { color:var(--red); }
+.volume-previews { margin-top:40px; }
+.volume-previews button { display:flex; width:100%; align-items:center; justify-content:space-between; gap:20px; text-align:left; border:0; border-bottom:1px solid #283b3920; padding:15px 0; background:none; font-size:15px; }
+.volume-previews button:hover { color:var(--red); }
+.special-volume figure img { max-height:400px; }
+.journal { max-width:1280px; margin:auto; }
+.journal-entry { border-top:1px solid #283b3930; padding:42px 0 48px; display:grid; grid-template-columns:90px minmax(0,1fr); gap:25px; }
+.entry-number { font:italic 38px/1.5 Georgia,serif; color:#9a8064; }
+.journal-entry h2 { margin:16px 0 25px; font-size:clamp(26px,3vw,40px); line-height:1.6; overflow-wrap:anywhere; }
+.entry-link { font-size:13px; }
+.page-state { padding:60px 0 100px; font-size:18px; }
+.ink-button { display:inline-block; background:var(--ink); color:var(--paper); border:1px solid var(--ink); padding:12px 26px; font:14px/1.6 "PingFang SC",sans-serif; letter-spacing:.05em; margin-top:25px; }
+.ink-button:hover { background:var(--red); border-color:var(--red); }
+.article-wrap { max-width:1060px; margin:auto; padding-top:50px; }
+.back-link { font-size:13px; }
+.article-heading { padding:55px 0 40px; border-bottom:1px solid #283b3930; margin-bottom:40px; }
+.article-heading h1 { font-size:clamp(32px,4vw,58px); line-height:1.55; margin-top:24px; overflow-wrap:anywhere; }
+.article-prose { display:block; font-size:18px; line-height:2; overflow-wrap:anywhere; }
+.article-prose p, .article-prose ul, .article-prose ol, .article-prose blockquote, .article-prose table, .article-prose pre { margin:1.4em 0; }
+.article-prose h1, .article-prose h2, .article-prose h3, .article-prose h4 { margin:1.8em 0 .8em; line-height:1.6; }
+.article-prose h1 { font-size:36px; }.article-prose h2 {font-size:30px;}.article-prose h3 {font-size:24px;}
+.article-prose a { color:#9a3929; text-decoration:underline; text-underline-offset:4px; }
+.article-prose img { margin:30px auto; max-width:100%; height:auto; }
+.article-prose blockquote { border-left:2px solid var(--red); padding-left:24px; color:#5e6c63; }
+.article-prose pre { background:#e0d7c5; padding:20px; overflow:auto; font-size:14px; line-height:1.8; white-space:pre; }
+.article-prose table { display:block; overflow-x:auto; border-collapse:collapse; }
+.article-prose td, .article-prose th { padding:10px 15px; border:1px solid #283b3940; }
+.submission-page .page-intro { position:relative; max-width:none; overflow:hidden; }
+.submission-page .page-intro::before { content:""; position:absolute; inset:0 0 0 45%; background:linear-gradient(90deg,var(--paper),#eee7d6bb),url('/assets/world/moonlit-reading-house.webp') 80% 25%/cover; opacity:.25; pointer-events:none; }
+.submission-page .page-intro>* { position:relative; }
+.submission-columns { padding-top:30px; padding-bottom:75px; }
+.submission-columns h2, .mail-section h2 { font-size:clamp(30px,4vw,48px); margin-bottom:35px; }
+.column-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:45px; }
+.column-list article { border-top:1px solid #283b3940; padding-top:24px; }
+.column-list h3 { font-family:var(--display); font-size:30px; margin:20px 0; }
+.column-list p { font-size:16px; }.column-list small { font-size:12px; display:block; margin-top:16px; color:#6f7464; }
+.submission-note { margin-top:35px; color:#686f5c; font-size:14px; max-width:750px; }
+.submission-note a { color:var(--ink); border-bottom:1px solid; white-space:nowrap; }
+.mail-section { padding-top:65px; border-top:1px solid #283b3930; }
+.mail-section h2 { margin-top:20px; }.mail-section>p:not(.folio) { max-width:750px; }
+.editor-email { display:block; font:clamp(20px,3.4vw,46px)/1.6 Georgia,serif; color:#a13d2e; margin-top:25px; overflow-wrap:anywhere; }
+.not-found { padding-block:120px 160px; }.not-found h1 { font-size:clamp(35px,6vw,70px); margin:30px 0; }
+html[lang="en-US"] .origin-words { writing-mode:horizontal-tb; display:flex; flex-direction:column; gap:25px; max-width:530px; }
+html[lang="en-US"] .vertical-copy { writing-mode:horizontal-tb; height:auto; white-space:pre-line; font-size:19px; line-height:1.9; }
+html[lang="en-US"] .origin-words .vertical-copy:first-child { font-size:28px; }
+html[lang="en-US"] .person { flex-direction:column; gap:20px; align-items:center; }
+html[lang="en-US"] .person h3, html[lang="en-US"] .person p { writing-mode:horizontal-tb; }
+html[lang="en-US"] .person p { font-size:12px; text-align:center; }
+html[lang="en-US"] .hero-identity { letter-spacing:.08em; font-size:14px; }
+html[lang="en-US"] .hero-description { font-size:16px; }
+html[lang="en-US"] .issue-text h2 { font-size:clamp(40px,5vw,66px); }
+html[lang="en-US"] .invitation h2 { font-size:clamp(38px,5vw,70px); }
+@media(max-width:1100px) { html[lang="en-US"] .dock-note { display:none; } }
+@media(max-width:760px) {
+  .interior-header { padding-block:18px; }.interior-brand { font-size:23px; gap:10px; }
+  .page-intro { padding-top:55px; padding-bottom:45px; }.page-intro h1 { font-size:44px; margin-block:22px; }.page-intro>p:last-child { font-size:16px; }
+  .library-volume { gap:28px; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); padding:45px 0; align-items:start; }
+  .library-volume figure { padding:10px 0; }.library-volume figure img { max-height:350px; }.volume-number {font-size:100px;top:-30px;}
+  .volume-copy h2 { font-size:26px; margin:10px 0 15px; }.volume-copy>p:not(.folio) {font-size:14px;}.text-links {gap:18px;font-size:13px;margin-top:20px;}
+  .volume-previews { margin-top:25px; }.volume-previews button { font-size:13px; padding:12px 0; }
+  .latest-volume { grid-template-columns:1fr; }.latest-volume figure { padding:10px 30px 25px; }.latest-volume figure img {max-height:430px;}.latest-volume .volume-copy h2 {font-size:38px;}
+  .journal-entry {grid-template-columns:35px minmax(0,1fr);gap:15px;padding:30px 0;}.entry-number {font-size:25px;}.journal-entry h2 {font-size:25px;margin-bottom:18px;}
+  .article-wrap {padding-top:30px;}.article-heading {padding-top:35px;}.article-prose {font-size:16px;}.article-heading h1 {font-size:32px;}
+  .column-list {grid-template-columns:1fr;gap:30px;}.column-list article {display:grid;grid-template-columns:40px 1fr;column-gap:15px;}.column-list h3 {margin:0 0 15px;font-size:28px;}.column-list p,.column-list small {grid-column:2;}.submission-columns {padding-bottom:50px;}.mail-section {padding-top:45px;}
+  html[lang="en-US"] .hero-copy {padding-top:clamp(330px,44svh,410px);}html[lang="en-US"] .hero-description {font-size:13px;}html[lang="en-US"] .hero-identity {font-size:11px;letter-spacing:.025em;}html[lang="en-US"] .paper-button {font-size:15px;}
+  html[lang="en-US"] .dock nav {gap:4px;}html[lang="en-US"] .dock nav a {font-size:12px;padding-inline:2px;}
+  html[lang="en-US"] .origin-words {max-width:none;margin-top:30px;gap:20px;}html[lang="en-US"] .vertical-copy {font-size:16px;}html[lang="en-US"] .origin-words .vertical-copy:first-child {font-size:25px;}
+  html[lang="en-US"] .person {min-height:130px;padding-block:15px;}html[lang="en-US"] .person p {font-size:11px;}
+  html[lang="en-US"] .top-tools {gap:12px;}html[lang="en-US"] .motion-toggle {font-size:10px;}
+  .top-tools .language-switch {font-size:10px;}.language-switch button {padding:3px 4px;}
+}
+@media(max-width:370px) { html[lang="en-US"] .hero-copy {padding-top:330px;} .library-volume:not(.latest-volume) {gap:20px;} .volume-copy h2 {font-size:22px;} }
+
+#main-content:focus {outline:none;}
+.entry-excerpt {max-width:850px;font-size:16px;line-height:1.9;color:#67705e;margin-bottom:24px;overflow-wrap:anywhere;}
+
+.archive-all {display:inline-block; margin-top:18px; padding-bottom:5px; border-bottom:1px solid #bda67988; font-size:15px;}
+@media(max-width:370px) {.top-tools {gap:9px;} .top-tools .motion-toggle {font-size:11px;}}

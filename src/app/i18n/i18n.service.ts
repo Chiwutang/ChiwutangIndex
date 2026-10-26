@@ -21,7 +21,7 @@ export class I18nService {
 
   setLanguage(language: LanguageCode): void {
     this.languageSubject.next(language);
-    localStorage.setItem(STORAGE_KEY, language);
+    try { localStorage.setItem(STORAGE_KEY, language); } catch { /* In-memory switching remains available when storage is blocked. */ }
     document.documentElement.lang = language;
   }
 
@@ -35,7 +35,8 @@ export class I18nService {
   }
 
   private getInitialLanguage(): LanguageCode {
-    const fromStorage = localStorage.getItem(STORAGE_KEY);
+    let fromStorage: string | null = null;
+    try { fromStorage = localStorage.getItem(STORAGE_KEY); } catch { /* Use browser language when storage is blocked. */ }
     if (fromStorage === 'zh-CN' || fromStorage === 'en-US') {
       return fromStorage;
     }

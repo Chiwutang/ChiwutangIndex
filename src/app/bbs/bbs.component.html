@@ -1,57 +1,25 @@
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">{{ 'bbs.eyebrow' | t }}</span>
-    <h1>{{ 'bbs.title' | t }}</h1>
-    <p>{{ 'bbs.desc' | t }}</p>
-  </div>
+<div class="interior-page paper-grain submission-page">
+<header class="page-intro frame">
+<p class="folio">{{ 'bbs.eyebrow' | t }}</p>
+<h1>{{ 'bbs.title' | t }}</h1>
+<p>{{ 'bbs.desc' | t }}</p>
+</header>
+<section class="submission-columns frame">
+<h2>{{ 'bbs.columns' | t }}</h2>
+<div class="column-list">
+<article *ngFor="let column of columns; let i = index"><span class="folio">0{{ i + 1 }}</span>
+<h3>{{ ('bbs.' + column) | t }}</h3>
+<p>{{ ('bbs.' + column + '.desc') | t }}</p>
+<small>{{ ('bbs.' + column + '.limit') | t }}</small>
+</article>
+</div>
+<p class="submission-note">{{ 'bbs.preface' | t }} <a routerLink="/news">{{ 'nav.news' | t }} ↗</a>
+</p>
 </section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>{{ 'bbs.section.columns' | t }}</h2>
-      <p>{{ 'bbs.section.columns.desc' | t }}</p>
-    </div>
-    <div class="info-list">
-      <div class="info-item">
-        <h3>卷首语｜主创者序言</h3>
-        <p>由主创者负责，介绍本卷主题或收录的特色文章。</p>
-      </div>
-      <div class="info-item">
-        <h3>冷火篇｜推理作品评论</h3>
-        <p>1500-10000字，聚焦某一作品的评论或研讨记录，观点需具体。</p>
-      </div>
-      <div class="info-item">
-        <h3>琢磨篇｜推理相关杂谈</h3>
-        <p>5000-30000字，涵盖创作讨论、作者后记、自述、资料整理等内容。</p>
-      </div>
-      <div class="info-item">
-        <h3>风骨篇｜推理相关杂谈</h3>
-        <p>推理作家访谈、讲座记录、活动总结，字数不限。</p>
-      </div>
-    </div>
-  </div>
+<section class="mail-section frame">
+<p class="folio">TO THE EDITORS</p>
+<h2>{{ 'bbs.mail.title' | t }}</h2>
+<p>{{ 'bbs.mail.desc' | t }}</p><a class="editor-email" href="mailto:qingwatang2022@qq.com">qingwatang2022@qq.com <span aria-hidden="true">↗</span></a>
+<p class="submission-note">{{ 'bbs.mail.note' | t }}</p><a class="ink-button" href="mailto:qingwatang2022@qq.com">{{ 'bbs.mail.button' | t }}</a>
 </section>
-
-<section class="section muted">
-  <div class="container">
-    <div class="section-header">
-      <h2>{{ 'bbs.section.submit' | t }}</h2>
-      <p>{{ 'bbs.section.submit.desc' | t }}</p>
-    </div>
-    <div class="submission-grid">
-      <div class="submission-card">
-        <h3>{{ 'bbs.mail.title' | t }}</h3>
-        <p>{{ 'bbs.mail.desc' | t }}</p>
-        <a class="btn primary" href="mailto:qingwatang2022@qq.com?subject=%E6%8A%95%E7%A8%BF&body=%E7%AC%94%E5%90%8D%EF%BC%9A%0AQQ%EF%BC%9A%0A%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%EF%BC%9A">{{ 'bbs.mail.button' | t }}</a>
-      </div>
-  
-      <div class="submission-card">
-        <h3>投稿须知</h3>
-        <p>请注明笔名与联系方式（QQ 为主），所有稿件将在截止日后三周内统一回复。</p>
-        <p>《磷》将于截止后三个月内在官方网站公开，并提供 PDF {{ 'book.download' | t }}。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+</div>

@@ -1,0 +1,17 @@
+<dialog #dialog class="preview-dialog" aria-labelledby="publication-preview-title" (close)="onClose()" (click)="onBackdrop($event)">
+  <ng-container *ngIf="selected as item">
+    <div class="preview-top">
+      <h2 id="publication-preview-title">{{ item.titleKey | t }}</h2>
+      <button type="button" [attr.aria-label]="'preview.close' | t" (click)="close()">{{ 'preview.close' | t }} ×</button>
+    </div>
+    <div class="preview-pages">
+      <img [src]="item.left" [alt]="(item.titleKey | t) + ' — ' + ('preview.left' | t)" width="920" height="1300">
+      <img [src]="item.right" [alt]="(item.titleKey | t) + ' — ' + ('preview.right' | t)" width="920" height="1300">
+    </div>
+    <p class="preview-caption">{{ 'preview.description' | t }}</p>
+    <div class="dialog-links">
+      <a [href]="latest.readUrl" target="_blank" rel="noopener noreferrer">{{ 'home.readLatest' | t }}</a>
+      <a [href]="latest.pdfUrl" target="_blank" rel="noopener noreferrer">{{ 'book.download' | t }}</a>
+    </div>
+  </ng-container>
+</dialog>
