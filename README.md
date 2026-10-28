@@ -14,11 +14,13 @@ npm start
 ## 内容与资源
 
 - 刊物链接、内页预览和成员：`src/app/world/publications.ts`
-- 中英文文案：`src/app/i18n/translations.ts`
+- 中文、英文和日语文案：`src/app/i18n/translations.ts`
 - 首页样式：`src/assets/styles/moonlit-home.css`
 - 其余页面及英文适配：`src/assets/styles/moonlit-pages.css`
 - 插画生成记录：`src/assets/world/ARTWORK.md`
 - 本地字体使用 ZCOOL XiaoWei，授权见 `src/assets/world/FONT-LICENSE.txt`
+
+语言切换支持中文、英文和日语。首次访问按浏览器语言选择，手动选择后会保存偏好。公告正文与刊物内页保留原文。
 
 公告列表与正文来自 `src/content/announcements.json`，构建时直接打包，不再调用消息接口，也不需要 GitHub Token。新增或编辑公告的方法见 `src/content/README.md`。历史文章地址保留，第五卷公告位于 `/news/40`。投稿继续使用编辑部邮箱。
 

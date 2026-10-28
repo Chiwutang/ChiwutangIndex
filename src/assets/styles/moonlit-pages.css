@@ -103,3 +103,21 @@ html[lang="en-US"] .invitation h2 { font-size:clamp(38px,5vw,70px); }
 
 .archive-all {display:inline-block; margin-top:18px; padding-bottom:5px; border-bottom:1px solid #bda67988; font-size:15px;}
 @media(max-width:370px) {.top-tools {gap:9px;} .top-tools .motion-toggle {font-size:11px;}}
+
+/* Japanese copy uses a consistent Mincho face and room for longer phrases. */
+html[lang="ja-JP"] { --display:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif; }
+html[lang="ja-JP"] body { font-family:var(--display); }
+html[lang="ja-JP"] .hero-title, html[lang="ja-JP"] .top-brand { font-family:MoonDisplay,"Songti SC",serif; }
+html[lang="ja-JP"] .origin-words { flex-direction:column; gap:25px; }
+html[lang="ja-JP"] .origin-words .vertical-copy { writing-mode:horizontal-tb; max-height:none; padding-top:0; font-size:18px; line-height:1.9; letter-spacing:.04em; }
+html[lang="ja-JP"] .origin-words .vertical-copy:first-child { font-size:25px; }
+html[lang="ja-JP"] .invitation h2 { font-family:var(--display); font-size:clamp(30px,3.3vw,48px); }
+@media(max-width:1100px) { html[lang="ja-JP"] .dock-note { display:none; } }
+@media(max-width:760px) {
+  html[lang="ja-JP"] .top-tools { gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+  html[lang="ja-JP"] .motion-toggle { font-size:10px; }
+  html[lang="ja-JP"] .hero-description { font-size:14px; }
+  html[lang="ja-JP"] .dock nav { gap:4px; }
+  html[lang="ja-JP"] .dock nav a { font-size:11px; padding-inline:2px; }
+  html[lang="ja-JP"] .origin-words .vertical-copy { font-size:16px; }
+}

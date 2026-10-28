@@ -37,11 +37,12 @@ export class I18nService {
   private getInitialLanguage(): LanguageCode {
     let fromStorage: string | null = null;
     try { fromStorage = localStorage.getItem(STORAGE_KEY); } catch { /* Use browser language when storage is blocked. */ }
-    if (fromStorage === 'zh-CN' || fromStorage === 'en-US') {
+    if (fromStorage === 'zh-CN' || fromStorage === 'en-US' || fromStorage === 'ja-JP') {
       return fromStorage;
     }
 
     const browserLanguage = navigator.language.toLowerCase();
+    if (browserLanguage.startsWith('ja')) return 'ja-JP';
     return browserLanguage.startsWith('zh') ? 'zh-CN' : 'en-US';
   }
 }
