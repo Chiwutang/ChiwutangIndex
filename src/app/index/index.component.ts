@@ -9,7 +9,6 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly earlier = PUBLICATIONS.slice(1);
   readonly previews = PREVIEWS;
   readonly members = MEMBERS;
-  motionPaused = false;
   previewOpen = false;
   private observer?: IntersectionObserver;
   private printObserver?: IntersectionObserver;

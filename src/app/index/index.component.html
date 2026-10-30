@@ -1,4 +1,4 @@
-<app-fireflies [paused]="motionPaused || previewOpen"></app-fireflies>
+<app-fireflies [paused]="previewOpen"></app-fireflies>
 <section class="hero" id="opening" aria-labelledby="hero-title">
   <div class="hero-art" aria-hidden="true">
 </div>
@@ -10,7 +10,6 @@
       <a routerLink="/news">{{ 'nav.news' | t }}</a>
       <a href="https://calendar.chiwutang.uk/" target="_blank" rel="noopener noreferrer">{{ 'nav.calendar' | t }} <span aria-hidden="true">↗</span></a>
       <app-language-switch></app-language-switch>
-      <button type="button" class="motion-toggle" [attr.aria-pressed]="motionPaused" (click)="motionPaused = !motionPaused">{{ (motionPaused ? 'motion.start' : 'motion.pause') | t }}</button>
     </div>
   </header>
   <div class="hero-copy">

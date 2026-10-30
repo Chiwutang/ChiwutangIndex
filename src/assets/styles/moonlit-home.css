@@ -126,15 +126,7 @@ button {
   white-space:nowrap;
   padding-block:8px;
 }
-.motion-toggle {
-  font-family:inherit;
-  font-size:13px;
-  background:transparent;
-  border:0;
-  border-bottom:1px solid #bda67966;
-  padding:8px 0;
-  color:var(--paper);
-}
+
 .hero-copy {
   position:absolute;
   left:var(--margin);
@@ -1289,9 +1281,7 @@ button {
   .hero-art {
     transform:none!important;
   }
-  .motion-toggle {
-    display:none;
-  }
+
   #fireflies {
     display:none;
   }
