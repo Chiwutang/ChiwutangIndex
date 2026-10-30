@@ -25,7 +25,7 @@ describe('Application keyboard navigation', () => {
       ['/', '/#archive', '/?lang=en#people', '/book', '/book#volume5', '/'].forEach((url, index) => {
         events.next(new NavigationEnd(index, url, url));
       });
-      expect(calls).toEqual(['Pageview', 'Pageview']);
+      expect(calls).toEqual(['page_view', 'page_view']);
       app.ngOnDestroy();
       events.next(new NavigationEnd(9, '/news', '/news'));
       expect(calls.length).toBe(2);

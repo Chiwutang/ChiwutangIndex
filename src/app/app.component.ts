@@ -17,7 +17,11 @@ export class AppComponent implements OnDestroy {
       if (!(event instanceof NavigationEnd)) return;
       const path = event.urlAfterRedirects.split(/[?#]/)[0];
       // Zaraz handles the document load. Only a new Angular page needs another view.
-      if (previousPath !== undefined && path !== previousPath) track('Pageview', {});
+      if (previousPath !== undefined && path !== previousPath) {
+        // GA4's Zaraz component accepts dl/dt as its standard URL/title fields.
+        // Explicit values avoid reusing the initial document's cached context.
+        track('page_view', { dl: location.href, dt: document.title });
+      }
       previousPath = path;
     });
   }
