@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { delay, Subscription } from 'rxjs';
 import { track, trackLink } from './world/analytics';
 
 @Component({
@@ -13,7 +13,8 @@ export class AppComponent implements OnDestroy {
   private readonly navigation: Subscription;
   constructor(router: Router) {
     let previousPath: string | undefined;
-    this.navigation = router.events.subscribe(event => {
+    // Component ngOnInit updates the title in Angular's next render turn.
+    this.navigation = router.events.pipe(delay(0)).subscribe(event => {
       if (!(event instanceof NavigationEnd)) return;
       const path = event.urlAfterRedirects.split(/[?#]/)[0];
       // Zaraz handles the document load. Only a new Angular page needs another view.
