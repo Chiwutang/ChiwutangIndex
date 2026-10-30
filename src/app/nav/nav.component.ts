@@ -9,6 +9,7 @@ export class NavComponent implements OnInit, OnDestroy {
   readonly sections = [
     { id: 'opening', label: 'chapter.home' }, { id: 'origin', label: 'chapter.origin' },
     { id: 'current', label: 'chapter.current' }, { id: 'archive', label: 'chapter.archive' },
+    { id: 'calendar', label: 'chapter.calendar' },
     { id: 'people', label: 'chapter.people' }, { id: 'submit', label: 'chapter.submit' }
   ];
   private readonly destroy$ = new Subject<void>();

@@ -8,6 +8,7 @@
     <a routerLink="/" class="top-brand" lang="zh-CN">赤乌堂</a>
     <div class="top-tools">
       <a routerLink="/news">{{ 'nav.news' | t }}</a>
+      <a href="https://calendar.chiwutang.uk/" target="_blank" rel="noopener noreferrer">{{ 'nav.calendar' | t }} <span aria-hidden="true">↗</span></a>
       <app-language-switch></app-language-switch>
       <button type="button" class="motion-toggle" [attr.aria-pressed]="motionPaused" (click)="motionPaused = !motionPaused">{{ (motionPaused ? 'motion.start' : 'motion.pause') | t }}</button>
     </div>
@@ -66,6 +67,26 @@
 </div>
   <p class="archive-note">{{ 'home.archive.note' | t }}</p>
   <a class="archive-all" routerLink="/book">{{ 'home.archive.all' | t }} ↗</a>
+</section>
+<section class="calendar-intro frame" id="calendar" aria-labelledby="calendar-title">
+  <div class="calendar-intro-inner">
+    <div class="calendar-intro-copy">
+      <p class="calendar-eyebrow">{{ 'home.calendar.eyebrow' | t }}</p>
+      <h2 id="calendar-title">{{ 'home.calendar.title' | t }}</h2>
+      <p class="calendar-lead">{{ 'home.calendar.lead' | t }}</p>
+      <p class="calendar-description">{{ 'home.calendar.description' | t }}</p>
+      <ul class="calendar-features">
+        <li>{{ 'home.calendar.releases' | t }}</li>
+        <li>{{ 'home.calendar.events' | t }}</li>
+        <li>{{ 'home.calendar.preorders' | t }}</li>
+      </ul>
+      <a class="calendar-button" href="https://calendar.chiwutang.uk/" target="_blank" rel="noopener noreferrer">{{ 'home.calendar.open' | t }} <span aria-hidden="true">↗</span></a>
+      <a class="calendar-subscribe" href="https://calendar.chiwutang.uk/subscribe/" target="_blank" rel="noopener noreferrer">{{ 'home.calendar.subscribe' | t }} <span aria-hidden="true">↗</span></a>
+    </div>
+    <figure class="calendar-preview">
+      <a href="https://calendar.chiwutang.uk/" target="_blank" rel="noopener noreferrer"><img src="assets/world/calendar-november-2026.png" width="1280" height="720" loading="lazy" [alt]="'home.calendar.previewAlt' | t"></a>
+    </figure>
+  </div>
 </section>
 <section class="people frame paper-grain" id="people" aria-labelledby="people-title">
   <div class="chapter-head">
